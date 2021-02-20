@@ -13,10 +13,19 @@ else:
     exit()
 import os, sys, stat
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
+os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/VirtualSMC/releases/download/1.2.0/VirtualSMC-1.2.0-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'Virtualsmc.zip')
     import time
     time.sleep(1)
@@ -53,8 +62,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
     shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/Lilu/releases/download/1.5.1/Lilu-1.5.1-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'Lilu.zip')
     import time
     time.sleep(1)
@@ -65,35 +82,38 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/WhateverGreen/releases/download/1.4.7/WhateverGreen-1.4.7-RELEASE.zip'
-    urllib.request.urlretrieve(url, 'Whatevergreen.zip')
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'WhateverGreen.zip')
     import time
     time.sleep(1)
     import zipfile
-    with zipfile.ZipFile('Whatevergreen.zip', 'r') as zip_ref:
+    with zipfile.ZipFile('WhateverGreen.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext", ignore_errors=True)
-    shutil.copytree("Whatevergreen.kext", "/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
+    shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/AppleALC/releases/download/1.5.7/AppleALC-1.5.7-RELEASE.zip'
-    urllib.request.urlretrieve(url, 'AppleALC.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
-    shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
-import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/AppleALC/releases/download/1.5.7/AppleALC-1.5.7-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'AppleALC.zip')
     import time
     time.sleep(1)
@@ -105,8 +125,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
     shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/IntelMausi/releases/download/1.0.5/IntelMausi-1.0.5-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'IntelMausi.zip')
     import time
     time.sleep(1)
@@ -118,8 +146,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
     shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
-    import urllib.request
-    url = 'https://github.com/khronokernel/SmallTree-I211-AT-patch/releases/download/1.3.0/SmallTreeIntel82576.kext.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'SmallTreeIntel82576.zip')
     import time
     time.sleep(1)
@@ -131,8 +167,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
     shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
-    import urllib.request
-    url = 'https://github.com/Mieze/AtherosE2200Ethernet/releases/download/2.2.2/AtherosE2200Ethernet-V2.2.2.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'AtherosE2200Ethernet.zip')
     import time
     time.sleep(1)
@@ -144,8 +188,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
     shutil.copytree("Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
-    import urllib.request
-    url = 'https://github.com/Mieze/RTL8111_driver_for_OS_X/releases/download/V2.4.0/RealtekRTL8111-V2.4.0.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'RealtekRTL8111.zip')
     import time
     time.sleep(1)
@@ -169,19 +221,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
     shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext"):
-    import urllib.request
-    url = 'https://github.com/chris1111/AppleIntelE1000e/files/5112385/Release.V-3.3.7.10.6.to.Big.Sur.11.zip'
-    urllib.request.urlretrieve(url, 'AppleIntelE1000e.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('AppleIntelE1000e.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext", ignore_errors=True)
-    shutil.copytree("AppleIntelE1000e.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext")
-import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
@@ -194,45 +233,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
     shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
-import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext"):
-    import urllib.request
-    url = 'https://github.com/chris1111/BCM5722D/files/1942667/BCM5722D.kext.zip'
-    urllib.request.urlretrieve(url, 'BCM5722D.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('BCM5722D.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext", ignore_errors=True)
-    shutil.copytree("BCM5722D.kext", "/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext")
-import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext"):
-    import urllib.request
-    url = 'https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-1108.zip'
-    urllib.request.urlretrieve(url, 'USBInjectAll.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('USBInjectAll.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext", ignore_errors=True)
-    shutil.copytree("Release/USBInjectAll.kext", "/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext")
-import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext"):
-    import urllib.request
-    url = 'https://github.com/RehabMan/OS-X-USB-Inject-All/archive/master.zip'
-    urllib.request.urlretrieve(url, 'XHCI-unsupported.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('XHCI-unsupported.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext", ignore_errors=True)
-    shutil.copytree("XHCI-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
     import urllib.request
@@ -248,8 +248,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
     shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
-    import urllib.request
-    url = 'https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases/download/1.1.2/IntelBluetooth.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'IntelBluetoothFirmware.zip')
     import time
     time.sleep(1)
@@ -266,8 +274,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
     shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/AirportBrcmFixup/releases/download/2.1.2/AirportBrcmFixup-2.1.2-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'AirportBrcmFixup.zip')
     import time
     time.sleep(1)
@@ -279,8 +295,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
     shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmBluetoothInjector.zip')
     import time
     time.sleep(1)
@@ -291,10 +315,18 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
-    urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorLegacy.zip')
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorlegacy.zip')
     import time
     time.sleep(1)
     import zipfile
@@ -305,8 +337,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
     shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
     import time
     time.sleep(1)
@@ -318,8 +358,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
     shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmFirmwareRepo.zip')
     import time
     time.sleep(1)
@@ -331,8 +379,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
     shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmNonPatchRAM.zip')
     import time
     time.sleep(1)
@@ -344,8 +400,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
     shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmNonPatchRAM2.zip')
     import time
     time.sleep(1)
@@ -357,8 +421,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
     shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmPatchRAM2.zip')
     import time
     time.sleep(1)
@@ -370,8 +442,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
     shutil.copytree("BrcmPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/BrcmPatchRAM/releases/download/2.5.6/BrcmPatchRAM-2.5.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'BrcmPatchRAM3.zip')
     import time
     time.sleep(1)
@@ -409,8 +489,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
     shutil.copytree("VoodooHDA.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/CpuTscSync/releases/download/1.0.3/CpuTscSync-1.0.3-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'CpuTscSync.zip')
     import time
     time.sleep(1)
@@ -422,8 +510,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
     shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/NVMeFix/releases/download/1.0.5/NVMeFix-1.0.5-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'NVMeFix.zip')
     import time
     time.sleep(1)
@@ -474,8 +570,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/VoodooPS2/releases/download/2.2.1/VoodooPS2Controller-2.2.1-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
     import time
     time.sleep(1)
@@ -487,8 +591,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooSMBus/VoodooRMI/releases/download/1.3.1/VoodooRMI-1.3.1-Release.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooRMI.zip')
     import time
     time.sleep(1)
@@ -499,9 +611,17 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
     shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooSMBus/VoodooSMBus/releases/download/v2.2/VoodooSMBus-v2.2.zip'
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooSMBus.zip')
     import time
     time.sleep(1)
@@ -513,8 +633,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     shutil.copytree("kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooI2C/VoodooI2C/releases/download/2.6.4/VoodooI2C-2.6.4.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooI2C.zip')
     import time
     time.sleep(1)
@@ -526,8 +654,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
     shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooI2C/VoodooI2C/releases/download/2.6.4/VoodooI2C-2.6.4.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CAtmelMXT.zip')
     import time
     time.sleep(1)
@@ -539,8 +675,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
     shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooI2C/VoodooI2C/releases/download/2.6.4/VoodooI2C-2.6.4.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
     import time
     time.sleep(1)
@@ -552,8 +696,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
     shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooI2C/VoodooI2C/releases/download/2.6.4/VoodooI2C-2.6.4.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CFTE.zip')
     import time
     time.sleep(1)
@@ -565,8 +717,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
     shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooI2C/VoodooI2C/releases/download/2.6.4/VoodooI2C-2.6.4.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CHID.zip')
     import time
     time.sleep(1)
@@ -578,8 +738,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
     shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
-    import urllib.request
-    url = 'https://github.com/VoodooI2C/VoodooI2C/releases/download/2.6.4/VoodooI2C-2.6.4.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CSynaptics.zip')
     import time
     time.sleep(1)
@@ -616,22 +784,17 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
     shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext"):
-    import urllib.request
-    url = 'https://github.com/chunnann/ATH9KFixup/archive/master.zip'
-    urllib.request.urlretrieve(url, 'ATH9KFixup.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('ATH9KFixup.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext", ignore_errors=True)
-    shutil.copytree("ATH9KFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext")
-import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/VoodooPS2/releases/download/2.2.1/VoodooPS2Controller-2.2.1-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
     import time
     time.sleep(1)
@@ -643,8 +806,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.6/OpenCore-0.6.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
     import time
     time.sleep(1)
@@ -656,8 +827,16 @@ if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
     shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.6/OpenCore-0.6.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
     import time
     time.sleep(1)
@@ -669,8 +848,16 @@ if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
     shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.6/OpenCore-0.6.6-RELEASE.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
     import time
     time.sleep(1)
@@ -681,26 +868,30 @@ if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
     os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
     shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus.efi'
-    urllib.request.urlretrieve(url, 'hfsplus.efi')
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'OpenRuntime.zip')
     import time
     time.sleep(1)
     import shutil, os
-    os.remove("/Volumes/EFI/EFI/OC/Drivers/hfsplus.efi")
-    shutil.copy2("hfsplus.efi", "/Volumes/EFI/EFI/OC/Drivers/hfsplus.efi")
+    os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
+    shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
 
 
-import time, os, shutil
-print("The script has been completed, if there are any bugs feel free to contact me.")
-print("The script will now SELF DESTRUCT BYE BYE")
-file_path = os.path.expanduser(os.sep.join(["~","Downloads/OpenCore-Updater"]))
-shutil.rmtree(file_path, ignore_errors=True)
+print("The script has been completed, if there are any bugs feel free to contact me. (Discord = Tijmen#9962 .)")
 
 print("BYE BYE")
 
-time.sleep(1)
+time.sleep(2)
 exit()
 
 
