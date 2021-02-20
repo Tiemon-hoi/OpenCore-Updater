@@ -9,7 +9,7 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 - [x] Can update most Kexts
 - [x] Can update OpenCore, and some efi's (warning, you need to update your config.plist)
 - [ ] Can merge old config.plist with newest version, this is currently in the works
-- [ ] Can automatically grab the newest version of everything so you don't have to redownload the script, i am working on this as of right now
+- [x] Can automatically grab the newest version of everything so you don't have to redownload the script, yes it can now! worked on that the whole day :))
 - [ ] Lets the user choose what they want to upgrade, im currently busy with making this.
 - [ ] Has a compiler (so you don't have to run it from the command line)
 - [ ] Is cross platform; i am also working on this, windows and macos will be supported and tested by myself.
