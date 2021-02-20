@@ -17,39 +17,39 @@ import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
     import urllib.request
     url = 'https://github.com/acidanthera/VirtualSMC/releases/download/1.2.0/VirtualSMC-1.2.0-RELEASE.zip'
-    urllib.request.urlretrieve(url, 'VirtualSMC-1.2.0-RELEASE.zip')
+    urllib.request.urlretrieve(url, 'Virtualsmc.zip')
     import time
     time.sleep(1)
     import zipfile
-    with zipfile.ZipFile('VirtualSMC-1.2.0-RELEASE.zip', 'r') as zip_ref:
+    with zipfile.ZipFile('Virtualsmc.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext", ignore_errors=True)
     shutil.copytree("Kexts/VirtualSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext"):
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCBatteryManager.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext"):
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCDellSensors.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext"):
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCLightsensor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext"):
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
@@ -62,7 +62,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
     with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext"):
@@ -75,7 +75,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext"):
     with zipfile.ZipFile('Whatevergreen.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext", ignore_errors=True)
     shutil.copytree("Whatevergreen.kext", "/Volumes/EFI/EFI/OC/Kexts/Whatevergreen.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
@@ -88,7 +88,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
     with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
     shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
@@ -101,7 +101,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
     with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
     shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
@@ -114,7 +114,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
     with zipfile.ZipFile('IntelMausi.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
     shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
@@ -127,7 +127,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
     with zipfile.ZipFile('SmallTreeIntel82576.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
     shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
@@ -140,7 +140,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
     with zipfile.ZipFile('AtherosE2200Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
     shutil.copytree("Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
@@ -153,8 +153,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
     with zipfile.ZipFile('RealtekRTL8111.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
-    shutil.copytree("Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext", ignore_errors=True)
+    shutil.copytree("RealtekRTL8111-V2.4.0/Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     import urllib.request
@@ -166,7 +166,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     with zipfile.ZipFile('LucyRTL8125Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
     shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext"):
@@ -179,7 +179,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext"):
     with zipfile.ZipFile('AppleIntelE1000e.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext", ignore_errors=True)
     shutil.copytree("AppleIntelE1000e.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleIntelE1000e.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
@@ -192,7 +192,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     with zipfile.ZipFile('RealtekRTL8100.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
     shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext"):
@@ -205,7 +205,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext"):
     with zipfile.ZipFile('BCM5722D.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext", ignore_errors=True)
     shutil.copytree("BCM5722D.kext", "/Volumes/EFI/EFI/OC/Kexts/BCM5722D.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext"):
@@ -218,7 +218,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext"):
     with zipfile.ZipFile('USBInjectAll.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext", ignore_errors=True)
     shutil.copytree("Release/USBInjectAll.kext", "/Volumes/EFI/EFI/OC/Kexts/USBInjectAll.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext"):
@@ -231,7 +231,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext"):
     with zipfile.ZipFile('XHCI-unsupported.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext", ignore_errors=True)
     shutil.copytree("XHCI-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/XHCI-unsupported.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
@@ -244,7 +244,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
     with zipfile.ZipFile('itlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext", ignore_errors=True)
     shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
@@ -257,12 +257,12 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
     with zipfile.ZipFile('IntelBluetoothFirmware.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext", ignore_errors=True)
     shutil.copytree("IntelBluetoothFirmware.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
@@ -275,7 +275,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
     with zipfile.ZipFile('AirportBrcmFixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext", ignore_errors=True)
     shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
@@ -288,7 +288,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
     with zipfile.ZipFile('BrcmBluetoothInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
@@ -301,7 +301,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
     with zipfile.ZipFile('BrcmBluetoothInjectorLegacy.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
@@ -314,7 +314,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
     with zipfile.ZipFile('BrcmFirmwareData.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext", ignore_errors=True)
     shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
@@ -327,7 +327,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
     with zipfile.ZipFile('BrcmFirmwareRepo.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext", ignore_errors=True)
     shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
@@ -340,7 +340,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
     with zipfile.ZipFile('BrcmNonPatchRAM.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext", ignore_errors=True)
     shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
@@ -353,7 +353,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
     with zipfile.ZipFile('BrcmNonPatchRAM2.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext", ignore_errors=True)
     shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
@@ -366,7 +366,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
     with zipfile.ZipFile('BrcmPatchRAM2.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext", ignore_errors=True)
     shutil.copytree("BrcmPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
@@ -379,7 +379,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
     with zipfile.ZipFile('BrcmPatchRAM3.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext", ignore_errors=True)
     shutil.copytree("BrcmPatchRAM3.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
@@ -392,7 +392,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
     with zipfile.ZipFile('XLNCUSBFix.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext", ignore_errors=True)
     shutil.copytree("XLNCUSBFix.kext", "/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
@@ -405,21 +405,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
     with zipfile.ZipFile('VoodooHDA.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext", ignore_errors=True)
     shutil.copytree("VoodooHDA.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
-import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleMCEReporterDisabler.kext"):
-    import urllib.request
-    url = 'https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip'
-    urllib.request.urlretrieve(url, 'AppleMCEReporterDisabler.zip')
-    import time
-    time.sleep(1)
-    import zipfile
-    with zipfile.ZipFile('AppleMCEReporterDisabler.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleMCEReporterDisabler.kext")
-    shutil.copytree("AppleMCEReporterDisabler.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleMCEReporterDisabler.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
     import urllib.request
@@ -431,7 +418,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
     with zipfile.ZipFile('CpuTscSync.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext", ignore_errors=True)
     shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
@@ -444,7 +431,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
     with zipfile.ZipFile('NVMeFix.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
     shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
@@ -457,7 +444,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
     with zipfile.ZipFile('SATA-unsupported.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext", ignore_errors=True)
     shutil.copytree("SATA-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
@@ -470,7 +457,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
     with zipfile.ZipFile('AHCIPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
     shutil.copytree("AHCIPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
@@ -483,7 +470,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     with zipfile.ZipFile('ATAPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
     shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
@@ -496,7 +483,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
     with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
@@ -509,7 +496,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     with zipfile.ZipFile('VoodooRMI.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
     shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
@@ -522,7 +509,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     with zipfile.ZipFile('VoodooSMBus.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
     shutil.copytree("kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
@@ -535,7 +522,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
     with zipfile.ZipFile('VoodooI2C.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext", ignore_errors=True)
     shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
@@ -548,7 +535,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
     with zipfile.ZipFile('VoodooI2CAtmelMXT.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
@@ -561,7 +548,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
     with zipfile.ZipFile('VoodooI2CELAN.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
@@ -574,7 +561,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
     with zipfile.ZipFile('VoodooI2CFTE.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
@@ -587,7 +574,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
     with zipfile.ZipFile('VoodooI2CHID.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
@@ -600,7 +587,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
     with zipfile.ZipFile('VoodooI2CSynaptics.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
@@ -613,7 +600,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
     with zipfile.ZipFile('AtherosL1cEthernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext", ignore_errors=True)
     shutil.copytree("AtherosL1cEthernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
@@ -626,7 +613,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
     with zipfile.ZipFile('AirPortAtheros40.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
     shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext"):
@@ -639,7 +626,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext"):
     with zipfile.ZipFile('ATH9KFixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext", ignore_errors=True)
     shutil.copytree("ATH9KFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/ATH9KFixup.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
@@ -652,27 +639,64 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
     with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 import os, time
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AMDRyzenCPUPowerManagement.kext"):
+if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
     import urllib.request
-    url = 'https://github.com/trulyspinach/SMCAMDProcessor/releases/download/0.6.6/AMDRyzenCPUPowerManagement.kext.zip'
-    urllib.request.urlretrieve(url, 'AMDRyzenCPUPowerManagement.zip')
+    url = 'https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.6/OpenCore-0.6.6-RELEASE.zip'
+    urllib.request.urlretrieve(url, 'OpenCore.zip')
     import time
     time.sleep(1)
     import zipfile
-    with zipfile.ZipFile('AMDRyzenCPUPowerManagement.zip', 'r') as zip_ref:
+    with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    import shutil
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AMDRyzenCPUPowerManagement.kext")
-    shutil.copytree("AMDRyzenCPUPowerManagement.kext", "/Volumes/EFI/EFI/OC/Kexts/AMDRyzenCPUPowerManagement.kext")
+    import shutil, os
+    os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
+    shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
+    import urllib.request
+    url = 'https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.6/OpenCore-0.6.6-RELEASE.zip'
+    urllib.request.urlretrieve(url, 'OpenCore.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil, os
+    os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
+    shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
+    import urllib.request
+    url = 'https://github.com/acidanthera/OpenCorePkg/releases/download/0.6.6/OpenCore-0.6.6-RELEASE.zip'
+    urllib.request.urlretrieve(url, 'OpenCore.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil, os
+    os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
+    shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi"):
+    import urllib.request
+    url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus.efi'
+    urllib.request.urlretrieve(url, 'hfsplus.efi')
+    import time
+    time.sleep(1)
+    import shutil, os
+    os.remove("/Volumes/EFI/EFI/OC/Drivers/hfsplus.efi")
+    shutil.copy2("hfsplus.efi", "/Volumes/EFI/EFI/OC/Drivers/hfsplus.efi")
 
-import time, os
+
+import time, os, shutil
 print("The script has been completed, if there are any bugs feel free to contact me.")
 print("The script will now SELF DESTRUCT BYE BYE")
-file_path = '~/Downloads/OpenCore-updater/'
-os.remove(file_path)
+file_path = os.path.expanduser(os.sep.join(["~","Downloads/OpenCore-Updater"]))
+shutil.rmtree(file_path, ignore_errors=True)
 
 print("BYE BYE")
 
