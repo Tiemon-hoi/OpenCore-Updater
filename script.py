@@ -15,7 +15,7 @@ else:
 import os, sys, stat
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
     import json
 try:
@@ -31,8 +31,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'Virtualsmc.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('Virtualsmc.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -80,8 +78,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'Lilu.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -104,8 +100,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'WhateverGreen.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('WhateverGreen.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -128,8 +122,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'CPUFriend.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -150,8 +142,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'Polaris22Fixup.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -174,8 +164,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AppleALC.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -198,8 +186,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'IntelMausi.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('IntelMausi.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -220,8 +206,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'SmallTreeIntel82576.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('SmallTreeIntel82576.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -242,8 +226,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AtherosE2200Ethernet.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AtherosE2200Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -264,8 +246,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'RealtekRTL8111.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('RealtekRTL8111.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -277,8 +257,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
     urllib.request.urlretrieve(url, 'LucyRTL8125Ethernet.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('LucyRTL8125Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -290,8 +268,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
     urllib.request.urlretrieve(url, 'RealtekRTL8100.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('RealtekRTL8100.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -314,8 +290,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'itlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('itlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -340,8 +314,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -366,8 +338,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -392,8 +362,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -418,8 +386,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -444,8 +410,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -470,8 +434,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -496,8 +458,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -518,8 +478,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'IntelBluetoothFirmware.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('IntelBluetoothFirmware.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -547,8 +505,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportBrcmFixup.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirportBrcmFixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -571,8 +527,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmBluetoothInjector.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmBluetoothInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -595,8 +549,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorlegacy.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmBluetoothInjectorLegacy.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -619,8 +571,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmFirmwareData.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -643,8 +593,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmFirmwareRepo.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmFirmwareRepo.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -666,8 +614,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmNonPatchRAM.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmNonPatchRAM.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -690,8 +636,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmNonPatchRAM2.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmNonPatchRAM2.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -714,8 +658,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmPatchRAM2.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmPatchRAM2.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -738,8 +680,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmPatchRAM3.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrcmPatchRAM3.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -751,8 +691,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
     import urllib.request
     url = 'https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip'
     urllib.request.urlretrieve(url, 'XLNCUSBFix.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('XLNCUSBFix.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -765,8 +703,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
     url = 'https://sourceforge.net/projects/voodoohda/files/latest/download'
     urllib.request.urlretrieve(url, 'VoodooHDA.zip')
     time.sleep(6)
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooHDA.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -789,8 +725,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'CpuTscSync.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('CpuTscSync.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -813,8 +747,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'NVMeFix.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('NVMeFix.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -837,8 +769,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'HibernationFixup.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('HibernationFixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -861,8 +791,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'NightShiftEnabler.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('NightShiftEnabler.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -885,8 +813,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'Innie.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('Innie.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -898,8 +824,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
     urllib.request.urlretrieve(url, 'SATA-unsupported.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('SATA-unsupported.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -911,8 +835,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip?raw=true'
     urllib.request.urlretrieve(url, 'AHCIPortInjector.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AHCIPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -924,8 +846,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip?raw=true'
     urllib.request.urlretrieve(url, 'ATAPortInjector.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('ATAPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -948,8 +868,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -972,8 +890,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooInput.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooInput.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -996,8 +912,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooRMI.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooRMI.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1009,8 +923,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
     url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
     import urllib
     urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AlpsT4USB.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1031,14 +943,12 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooSMBus.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooSMBus.zip', 'r') as zip_ref:
       zip_ref.extractall()
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
-    shutil.copytree("kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
+    shutil.copytree("VoodooSMBus-v2.2/kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
     import json
@@ -1053,8 +963,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooI2C.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooI2C.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1075,8 +983,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CAtmelMXT.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooI2CAtmelMXT.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1097,8 +1003,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooI2CELAN.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1119,8 +1023,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CFTE.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooI2CFTE.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1141,8 +1043,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CHID.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooI2CHID.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1163,8 +1063,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooI2CSynaptics.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooI2CSynaptics.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1185,8 +1083,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'FakeSMC.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('FakeSMC.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1258,8 +1154,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=115905'
     urllib.request.urlretrieve(url, 'AtherosL1cEthernet.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AtherosL1cEthernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1271,8 +1165,6 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
     import urllib.request
     url = 'https://i.applelife.ru/2018/12/442854_AirPortAtheros40.kext.zip'
     urllib.request.urlretrieve(url, 'AirPortAtheros40.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('AirPortAtheros40.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1295,8 +1187,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1319,8 +1209,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrightnessKeys.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('BrightnessKeys.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1343,8 +1231,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1367,8 +1253,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1391,8 +1275,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
-    import time
-    time.sleep(1)
     import zipfile
     with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
@@ -1415,8 +1297,6 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenRuntime.zip')
-    import time
-    time.sleep(1)
     import shutil, os
     os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
     shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
