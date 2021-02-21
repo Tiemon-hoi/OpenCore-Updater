@@ -1362,6 +1362,30 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
     shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
 import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/cdf/Innie/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'Innie.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('Innie.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Innie.kext", ignore_errors=True)
+    shutil.copytree("Innie.kext", "/Volumes/EFI/EFI/OC/Kexts/Innie.kext")
+import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
