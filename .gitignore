@@ -123,3 +123,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+stale.yml
+.github:stale.yml.rtf
