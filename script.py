@@ -1314,6 +1314,54 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
     shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
 import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/HibernationFixup/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'HibernationFixup.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('HibernationFixup.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext", ignore_errors=True)
+    shutil.copytree("HibernationFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/cdf/NightShiftEnabler/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'NightShiftEnabler.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('NightShiftEnabler.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
+    shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
+import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
