@@ -22,8 +22,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'Virtualsmc.zip')
@@ -68,8 +71,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'Lilu.zip')
@@ -89,8 +95,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'WhateverGreen.zip')
@@ -110,8 +119,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AppleALC.zip')
@@ -131,8 +143,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'IntelMausi.zip')
@@ -152,6 +167,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -173,6 +189,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -194,6 +211,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -235,8 +253,19 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
-    import urllib.request
-    url = 'https://github.com/OpenIntelWireless/itlwm/releases/download/v1.2.0/itlwm_v1.2.0_stable.kext.zip'
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "itlwm" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
     urllib.request.urlretrieve(url, 'itlwm.zip')
     import time
     time.sleep(1)
@@ -246,6 +275,681 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext", ignore_errors=True)
     shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "BigSur" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "BigSur" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "BigSur" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.7)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.6)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.5)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.4)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.3)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.2)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.1)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15.0)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Catalina" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.6)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.5)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.4)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.3)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.2)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.1)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14.0)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "Mojave" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.6)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.5)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.4)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.3)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.2)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.1)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
+print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13.0)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "HighSierra" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
     import json
@@ -254,6 +958,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -280,8 +985,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'AirportBrcmFixup.zip')
@@ -301,8 +1009,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmBluetoothInjector.zip')
@@ -322,8 +1033,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorlegacy.zip')
@@ -343,8 +1057,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
@@ -364,8 +1081,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmFirmwareRepo.zip')
@@ -387,6 +1107,8 @@ except ImportError:
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmNonPatchRAM.zip')
@@ -406,8 +1128,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmNonPatchRAM2.zip')
@@ -427,8 +1152,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmPatchRAM2.zip')
@@ -448,8 +1176,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'BrcmPatchRAM3.zip')
@@ -479,6 +1210,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
     import urllib.request
     url = 'https://sourceforge.net/projects/voodoohda/files/latest/download'
     urllib.request.urlretrieve(url, 'VoodooHDA.zip')
+    time.sleep(6)
     import time
     time.sleep(1)
     import zipfile
@@ -495,8 +1227,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'CpuTscSync.zip')
@@ -516,8 +1251,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'NVMeFix.zip')
@@ -576,8 +1314,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
@@ -597,8 +1338,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooRMI.zip')
@@ -618,6 +1362,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -639,6 +1384,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -660,6 +1406,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -681,6 +1428,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -702,6 +1450,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -723,6 +1472,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -744,6 +1494,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -791,8 +1542,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
@@ -812,8 +1566,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
@@ -833,8 +1590,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
@@ -854,8 +1614,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenCore.zip')
@@ -875,8 +1638,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+import json
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     import urllib
     urllib.request.urlretrieve(url, 'OpenRuntime.zip')
