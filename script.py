@@ -37,32 +37,32 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext", ignore_errors=True)
     shutil.copytree("Kexts/VirtualSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCBatteryManager.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCDellSensors.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCLightsensor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
     import json
 try:
@@ -84,7 +84,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
     import json
 try:
@@ -106,7 +106,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
     shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
     import json
 try:
@@ -128,7 +128,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
     shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
     import json
 try:
@@ -148,7 +148,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
     shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
     import json
 try:
@@ -170,7 +170,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
     shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
     import json
 try:
@@ -192,7 +192,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
     shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
     import json
 try:
@@ -212,7 +212,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
     shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
     import json
 try:
@@ -232,7 +232,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
     shutil.copytree("AtherosE2200Ethernet-V2.2.2/Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
     import json
 try:
@@ -252,7 +252,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext", ignore_errors=True)
     shutil.copytree("RealtekRTL8111-V2.4.0/Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
@@ -263,7 +263,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
     shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
@@ -274,7 +274,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
     shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
     import json
 try:
@@ -464,7 +464,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
     shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
     import json
 try:
@@ -484,12 +484,12 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext", ignore_errors=True)
     shutil.copytree("IntelBluetoothFirmware.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
     import json
 try:
@@ -511,7 +511,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext", ignore_errors=True)
     shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
     import json
 try:
@@ -533,7 +533,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
     import json
 try:
@@ -555,7 +555,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
     import json
 try:
@@ -577,7 +577,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext", ignore_errors=True)
     shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
     import json
 try:
@@ -599,7 +599,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext", ignore_errors=True)
     shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
     import json
 try:
@@ -620,7 +620,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext", ignore_errors=True)
     shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
     import json
 try:
@@ -642,7 +642,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext", ignore_errors=True)
     shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
     import json
 try:
@@ -664,7 +664,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext", ignore_errors=True)
     shutil.copytree("BrcmPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
     import json
 try:
@@ -686,7 +686,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext", ignore_errors=True)
     shutil.copytree("BrcmPatchRAM3.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
     import urllib.request
     url = 'https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip'
@@ -709,7 +709,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext", ignore_errors=True)
     shutil.copytree("VoodooHDA.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
     import json
 try:
@@ -731,7 +731,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext", ignore_errors=True)
     shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
     import json
 try:
@@ -753,7 +753,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
     shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
     import json
 try:
@@ -775,7 +775,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext", ignore_errors=True)
     shutil.copytree("HibernationFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
     import json
 try:
@@ -797,7 +797,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
     shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
     import json
 try:
@@ -819,7 +819,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Innie.kext", ignore_errors=True)
     shutil.copytree("Innie.kext", "/Volumes/EFI/EFI/OC/Kexts/Innie.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
@@ -830,7 +830,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext", ignore_errors=True)
     shutil.copytree("SATA-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip?raw=true'
@@ -841,7 +841,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
     shutil.copytree("AHCIPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     import urllib.request
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip?raw=true'
@@ -852,7 +852,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
     shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
     import json
 try:
@@ -874,7 +874,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
     import json
 try:
@@ -896,7 +896,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext", ignore_errors=True)
     shutil.copytree("VoodooInput.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     import json
 try:
@@ -918,7 +918,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
     shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
     url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
     import urllib
@@ -929,7 +929,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
     shutil.copytree("Release/AlpsT4USB.kext", "/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
     import json
 try:
@@ -949,7 +949,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
     shutil.copytree("VoodooSMBus-v2.2/kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
     import json
 try:
@@ -969,7 +969,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext", ignore_errors=True)
     shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
     import json
 try:
@@ -989,7 +989,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
     import json
 try:
@@ -1009,7 +1009,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
     import json
 try:
@@ -1029,7 +1029,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
     import json
 try:
@@ -1049,7 +1049,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
     import json
 try:
@@ -1069,7 +1069,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
     import json
 try:
@@ -1089,67 +1089,67 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext", ignore_errors=True)
     shutil.copytree("FakeSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext", ignore_errors=True)
     shutil.copytree("ACPIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext", ignore_errors=True)
     shutil.copytree("AmdCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/F718x.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/F718x.kext", ignore_errors=True)
     shutil.copytree("F718x.kext", "/Volumes/EFI/EFI/OC/Kexts/F718x.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext", ignore_errors=True)
     shutil.copytree("GeforceSensor.kext", "/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext", ignore_errors=True)
     shutil.copytree("IntelCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext", ignore_errors=True)
     shutil.copytree("IntelMCHMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext", ignore_errors=True)
     shutil.copytree("ITEIT87x.kext", "/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext", ignore_errors=True)
     shutil.copytree("NVClockX.kext", "/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext", ignore_errors=True)
     shutil.copytree("RadeonMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext", ignore_errors=True)
     shutil.copytree("SMIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext", ignore_errors=True)
     shutil.copytree("VoodooBatterySMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/W836x.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/W836x.kext", ignore_errors=True)
     shutil.copytree("W836x.kext", "/Volumes/EFI/EFI/OC/Kexts/W836x.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=115905'
@@ -1160,7 +1160,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext", ignore_errors=True)
     shutil.copytree("AtherosL1cEthernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
     import urllib.request
     url = 'https://i.applelife.ru/2018/12/442854_AirPortAtheros40.kext.zip'
@@ -1171,7 +1171,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
     shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
     import json
 try:
@@ -1193,7 +1193,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
     import json
 try:
@@ -1215,7 +1215,7 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
     shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
     import json
 try:
@@ -1237,7 +1237,7 @@ for asset in json_data["assets"]:
     import shutil, os
     os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
     shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
     import json
 try:
@@ -1259,7 +1259,7 @@ for asset in json_data["assets"]:
     import shutil, os
     os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
     shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
     import json
 try:
@@ -1281,7 +1281,7 @@ for asset in json_data["assets"]:
     import shutil, os
     os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
     shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
-import os, time
+import os
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
     import json
 try:
