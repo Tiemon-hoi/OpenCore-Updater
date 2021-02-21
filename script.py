@@ -325,7 +325,6 @@ for asset in json_data["assets"]:
 import os, platform, time
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
-print (v)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)):
     import json
 try:
@@ -352,7 +351,6 @@ for asset in json_data["assets"]:
 import os, platform, time
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
-print (v)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
     import json
 try:
@@ -379,7 +377,6 @@ for asset in json_data["assets"]:
 import os, platform, time
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
-print (v)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
     import json
 try:
@@ -406,7 +403,32 @@ for asset in json_data["assets"]:
 import os, platform, time
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
-print (v)
+if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "BigSur" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+import os, platform, time
+v, _, _ = platform.mac_ver()
+v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15)):
     import json
 try:
@@ -433,7 +455,6 @@ for asset in json_data["assets"]:
 import os, platform, time
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
-print (v)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14)):
     import json
 try:
@@ -460,7 +481,6 @@ for asset in json_data["assets"]:
 import os, platform, time
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
-print (v)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13)):
     import json
 try:
