@@ -112,6 +112,52 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
     shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")
 import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'CPUFriend.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
+    shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'Polaris22Fixup.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
+    shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
+import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
     import json
 try:
@@ -1331,6 +1377,30 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/Voodooinput/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'VoodooInput.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('VoodooInput.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext", ignore_errors=True)
+    shutil.copytree("VoodooInput.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext")
+import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     import json
 try:
@@ -1354,6 +1424,19 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
     shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
+    url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
+    import urllib
+    urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('AlpsT4USB.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
+    shutil.copytree("Release/AlpsT4USB.kext", "/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
     import json
@@ -1509,6 +1592,88 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
 import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'FakeSMC.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('FakeSMC.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext", ignore_errors=True)
+    shutil.copytree("FakeSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext", ignore_errors=True)
+    shutil.copytree("ACPIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext", ignore_errors=True)
+    shutil.copytree("AmdCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/F718x.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/F718x.kext", ignore_errors=True)
+    shutil.copytree("F718x.kext", "/Volumes/EFI/EFI/OC/Kexts/F718x.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext", ignore_errors=True)
+    shutil.copytree("GeforceSensor.kext", "/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext", ignore_errors=True)
+    shutil.copytree("IntelCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext", ignore_errors=True)
+    shutil.copytree("IntelMCHMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext", ignore_errors=True)
+    shutil.copytree("ITEIT87x.kext", "/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext", ignore_errors=True)
+    shutil.copytree("NVClockX.kext", "/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext", ignore_errors=True)
+    shutil.copytree("RadeonMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext", ignore_errors=True)
+    shutil.copytree("SMIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext", ignore_errors=True)
+    shutil.copytree("VoodooBatterySMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/W836x.kext"):
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/W836x.kext", ignore_errors=True)
+    shutil.copytree("W836x.kext", "/Volumes/EFI/EFI/OC/Kexts/W836x.kext")
+import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
     import urllib.request
     url = 'https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=115905'
@@ -1558,6 +1723,30 @@ for asset in json_data["assets"]:
     import shutil
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
+import os, time
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
+    import json
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
+url_data = urlopen("https://api.github.com/repos/acidanthera/BrightnessKeys/releases/latest").read()
+import json
+json_data = json.loads(url_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    url = asset["browser_download_url"]
+    import urllib
+    urllib.request.urlretrieve(url, 'BrightnessKeys.zip')
+    import time
+    time.sleep(1)
+    import zipfile
+    with zipfile.ZipFile('BrightnessKeys.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    import shutil
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
+    shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
 import os, time
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
     import json
