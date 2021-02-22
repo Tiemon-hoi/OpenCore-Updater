@@ -14,7 +14,7 @@ with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/
         f.write(upd.read())
     import sys
     import os
-    run_command(["chmod +x", __file__])
+    os.system(["chmod +x", __file__])
     os.execl(sys.argv[0], *sys.argv)
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform
 import urllib.request
