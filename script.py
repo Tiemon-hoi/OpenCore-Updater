@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 print("Hello! Welcome to my OC Updater script! this script is still in beta and if there is a bug dm me on Discord, or make an issue on GitHub.")
 print("To use this script you need to do the following prerequiresites:")
-print("You need to have your EFI mounted, you can do this with CorpNewt's script as of this moment i haven't implemented this")
 print("Make sure you don't have two EFI's mounted at the same time") 
 print("The script will now check if you have an EFI mounted...")
 import time
