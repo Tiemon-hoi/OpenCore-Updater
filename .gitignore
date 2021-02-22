@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 stale.yml
 .github:stale.yml.rtf
+test.py
