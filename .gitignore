@@ -126,3 +126,4 @@ dmypy.json
 stale.yml
 .github:stale.yml.rtf
 test.py
+Scripts/disk.py
