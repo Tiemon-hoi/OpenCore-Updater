@@ -5,15 +5,13 @@ print("Mount your EFI (using the MountEFI script from CorpNewt)")
 print("Make sure you don't have two EFI's mounted at the same time") 
 print("The script will now check for newer updates...")
 import urllib.request
-import os
+import time, os, urllib, sys, stat, json, zipfile, shutil, platform, subprocess
 
 path = os.path.realpath(__file__)
 
 with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
     with open(path, "wb+") as f:
         f.write(upd.read())
-    import sys
-    import os
     subprocess.call(["chmod" ,"+x", __file__])
     os.execl(sys.argv[0], *sys.argv)
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform
