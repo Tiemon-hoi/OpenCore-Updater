@@ -4,6 +4,17 @@ print("To use this script you need to do the following prerequiresites:")
 print("Mount your EFI (using the MountEFI script from CorpNewt)")
 print("Make sure you don't have two EFI's mounted at the same time") 
 print("The script will now check for newer updates...")
+import urllib.request
+import os
+
+path = os.path.realpath(__file__)
+
+with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
+    with open(path, "wb+") as f:
+        f.write(upd.read())
+    import sys
+    import os
+    os.execl(sys.argv[0], *sys.argv)
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform
 import urllib.request
 try:
@@ -19,7 +30,7 @@ else:
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -46,7 +57,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
     shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -54,11 +65,11 @@ for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Lilu.zip')
     with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
-      zip_ref.extractall()l
+      zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -70,7 +81,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
     shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -82,7 +93,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
     shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
-url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -92,7 +103,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
     shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -104,7 +115,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
     shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -116,7 +127,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
     shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
-url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -126,7 +137,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
     shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
-url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -136,7 +147,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
     shutil.copytree("AtherosE2200Ethernet-V2.2.2/Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
-url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -160,7 +171,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
     shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "itlwm" not in asset["name"]:
@@ -174,7 +185,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
@@ -188,7 +199,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
@@ -202,7 +213,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
@@ -216,7 +227,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
@@ -230,7 +241,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "Catalina" not in asset["name"]:
@@ -244,7 +255,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "Mojave" not in asset["name"]:
@@ -258,7 +269,7 @@ for asset in json_data["assets"]:
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13)):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "HighSierra" not in asset["name"]:
@@ -270,7 +281,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
     shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
-url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -283,7 +294,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -295,7 +306,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext", ignore_errors=True)
     shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -307,7 +318,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -319,7 +330,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext", ignore_errors=True)
     shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -331,7 +342,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext", ignore_errors=True)
     shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -343,7 +354,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext", ignore_errors=True)
     shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -355,7 +366,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext", ignore_errors=True)
     shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -367,7 +378,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext", ignore_errors=True)
     shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -379,7 +390,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext", ignore_errors=True)
     shutil.copytree("BrcmPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -406,7 +417,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext", ignore_errors=True)
     shutil.copytree("VoodooHDA.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -418,7 +429,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext", ignore_errors=True)
     shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -430,7 +441,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
     shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/HibernationFixup/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/HibernationFixup/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -442,7 +453,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext", ignore_errors=True)
     shutil.copytree("HibernationFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
-url_data = urlopen("https://api.github.com/repos/cdf/NightShiftEnabler/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/cdf/NightShiftEnabler/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -454,7 +465,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
     shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
-url_data = urlopen("https://api.github.com/repos/cdf/Innie/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/cdf/Innie/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -487,7 +498,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
     shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -499,7 +510,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/Voodooinput/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/Voodooinput/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -511,7 +522,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext", ignore_errors=True)
     shutil.copytree("VoodooInput.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -530,7 +541,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
     shutil.copytree("Release/AlpsT4USB.kext", "/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -540,7 +551,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
     shutil.copytree("VoodooSMBus-v2.2/kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -550,7 +561,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext", ignore_errors=True)
     shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -560,17 +571,17 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip'
+    urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
     with zipfile.ZipFile('VoodooI2CELAN.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -580,7 +591,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -590,7 +601,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
-url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -600,7 +611,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
     shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
-url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     url = asset["browser_download_url"]
@@ -660,7 +671,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
     shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -672,7 +683,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
     shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/BrightnessKeys/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/BrightnessKeys/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -684,7 +695,7 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
     shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -696,7 +707,7 @@ for asset in json_data["assets"]:
     os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
     shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -708,7 +719,7 @@ for asset in json_data["assets"]:
     os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
     shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
@@ -720,7 +731,7 @@ for asset in json_data["assets"]:
     os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
     shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
-url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+ url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
