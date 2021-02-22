@@ -12,9 +12,9 @@ path = os.path.realpath(__file__)
 with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
     with open(path, "wb+") as f:
         f.write(upd.read())
+    import subprocess
     subprocess.call(["chmod" ,"+x", __file__])
     os.execl(sys.argv[0], *sys.argv)
-import time, os, urllib, sys, stat, json, zipfile, shutil, platform
 import urllib.request
 try:
     from urllib.request import urlopen
