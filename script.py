@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 print("Hello! Welcome to my OC Updater script! this script is still in beta and if there is a bug dm me on Discord, or make an issue on GitHub.")
 print("To use this script you need to do the following prerequiresites:")
+print("Mount your EFI (using the MountEFI script from CorpNewt)")
 print("Make sure you don't have two EFI's mounted at the same time") 
 print("The script will now check if you have an EFI mounted...")
 import time
-time.sleep(10) 
+time.sleep(7) 
 import os
 if os.path.exists('/Volumes/EFI'):
     print ("You mounted your EFI! the script will continue.")
