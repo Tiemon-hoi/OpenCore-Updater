@@ -3,7 +3,7 @@ print("Hello! Welcome to my OC Updater script!If there is a bug dm me on Discord
 print("To use this script you need to do the following prerequiresites:")
 print("Mount your EFI (using the MountEFI script from CorpNewt)")
 print("Make sure you don't have two EFI's mounted at the same time") 
-print("The script will now check if you have an EFI mounted...")
+print("The script will now check for newer updates...")
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform
 import urllib.request
 try:
