@@ -14,7 +14,7 @@ with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/
         f.write(upd.read())
     import subprocess
     subprocess.call(["chmod" ,"+x", __file__])
-    os.execl(sys.argv[0], *sys.argv)
+    os.execv(__file__, sys.argv)
 import urllib.request
 try:
     from urllib.request import urlopen
