@@ -127,3 +127,4 @@ stale.yml
 .github:stale.yml.rtf
 test.py
 Scripts/disk.py
+.vscode/settings.json
