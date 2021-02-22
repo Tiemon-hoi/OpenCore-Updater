@@ -128,3 +128,5 @@ stale.yml
 test.py
 Scripts/disk.py
 .vscode/settings.json
+backupscript/.DS_Store
+backupscript/scriptbackup.py
