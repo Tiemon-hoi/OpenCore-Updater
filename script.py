@@ -45,11 +45,9 @@ else:
         print("opening MountEFI, after you mounted your EFI you can restart the script....")
         a = 'MountEFI-update/MountEFI.command'
         subprocess.call(["chmod" ,"+x", a])
-        subprocess.call(['open', '-W', '-a', 'Terminal.app', a])
-        c = 'subprocess.call(['open', '-W', '-a', 'Terminal.app', a])'
-        time.sleep(8)
-        a.kill()
-        c.kill()
+        p=subprocess.Popen(['open', '-a', 'Terminal.app', a])
+        time.sleep(15)
+        subprocess.call("kill $(ps aux | grep '[M]ountEFI' | awk '{print $2}')", shell=True)
         if os.path.exists("/Volumes/EFI"):
             print("well done! your EFI is mounted, continuing...")
         else: 
