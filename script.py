@@ -10,7 +10,7 @@ try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
-version 0.5
+version = 0.5
 print("the version of the script is" + version)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
 xyzpersion = re.findall(r'version\s*([\d.]+)', page)
