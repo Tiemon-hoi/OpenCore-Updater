@@ -47,7 +47,22 @@ else:
         else: 
             print("The script couldn't mount your EFI, falling back to MountEFI....")
             time.sleep(3)
-            exit()
+            url = 'https://github.com/corpnewt/MountEFI/archive/update.zip'
+            urllib.request.urlretrieve(url, 'MountEFI.zip')
+            with zipfile.ZipFile('MountEFI.zip', 'r') as zip_ref:
+              zip_ref.extractall()
+            print("opening MountEFI, the awesome tool from CorpNewt....")
+            b = 'MountEFI-update/MountEFI.command'
+            subprocess.call(["chmod" ,"+x", b])
+            p=subprocess.Popen(['open', '-a', 'Terminal.app', b])
+            time.sleep(15)
+            subprocess.call("kill $(ps aux | grep '[M]ountEFI' | awk '{print $2}')", shell=True)
+            if os.path.exists("/Volumes/EFI"):
+                print("well done! your EFI is mounted, continuing...")
+            else: 
+                print("Mount your EFI and come back.....")
+                time.sleep(3)
+                exit()
     except Exception:
         print("EFI not found, downloading MountEFI....")
         url = 'https://github.com/corpnewt/MountEFI/archive/update.zip'
