@@ -8,7 +8,7 @@ try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
-version=0.5
+version=[0.5]
 version = str(version)
 print("the version of the script is" + version)
 time.sleep(3)
