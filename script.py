@@ -8,8 +8,9 @@ try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
-    subprocess.call("mkdir", "downloadtemp")
-    subprocess.call("cd", "downloadtemp")
+    path = "downloadtemp"
+    os.mkdir(path)
+    os.chdir("downloadtemp")
 version=0.5
 version = str(version)
 time.sleep(3)
