@@ -42,7 +42,10 @@ else:
         urllib.request.urlretrieve(url, 'MountEFI.zip')
         with zipfile.ZipFile('MountEFI.zip', 'r') as zip_ref:
           zip_ref.extractall()
-        print("the script will now close, after you mounted your EFI you can restart the script....")
+        print("opening MountEFI, after you mounted your EFI you can restart the script....")
+        mountefi = MountEFI-update/MountEFI.command
+        subprocess.call(["chmod" ,"+x", mountefi])
+        subprocess.call(['open', '-W', '-a', 'Terminal.app', mountefi)
         time.sleep(7)
         exit()
 
