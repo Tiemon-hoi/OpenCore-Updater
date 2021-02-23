@@ -6,7 +6,7 @@ print("Make sure you don't have two EFI's mounted at the same time")
 print("The script will now check for newer updates...")
 import urllib.request
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform, subprocess
-version = 0.0.4
+version = 0.0.5
 path = os.path.realpath(__file__)
 
 with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
