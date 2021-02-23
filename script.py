@@ -43,9 +43,9 @@ else:
         with zipfile.ZipFile('MountEFI.zip', 'r') as zip_ref:
           zip_ref.extractall()
         print("opening MountEFI, after you mounted your EFI you can restart the script....")
-        mountefi = MountEFI-update/MountEFI.command
-        subprocess.call(["chmod" ,"+x", mountefi])
-        subprocess.call(['open', '-W', '-a', 'Terminal.app', mountefi)
+        a = 'MountEFI-update/MountEFI.command'
+        subprocess.call(["chmod" ,"+x", a])
+        subprocess.call(['open', '-W', '-a', 'Terminal.app', a])
         time.sleep(7)
         exit()
 
