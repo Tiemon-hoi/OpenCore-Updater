@@ -32,10 +32,12 @@ if os.path.exists('/Volumes/EFI'):
 else: 
     print ("You didn't mount your EFI, the script will now automatically mount your EFI....")
     time.sleep(3)
-    uuidnvramthingy = os.system("nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/'")
-    lastcommand = "sudo diskutil mount " + uuidnvramthingy
-    os.system(lastcommand)
-    print("EFI mounted, continuing...")
+    try:
+        uuidnvramthingy = os.system("nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/'")
+        lastcommand = "sudo diskutil mount " + uuidnvramthingy
+        os.system(lastcommand)
+    except Exception:
+        print("EFI not found, downloading MountEFI....")
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
