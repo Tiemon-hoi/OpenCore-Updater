@@ -238,12 +238,12 @@ os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext", ignore_errors=True)
     shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
-if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    v, _, _ = platform.mac_ver()
+    v = float('.'.join(v.split('.')[:2]))
+    if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)):
+     url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
@@ -252,12 +252,12 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
     shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
-if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    v, _, _ = platform.mac_ver()
+    v = float('.'.join(v.split('.')[:2]))
+    if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
+     url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
@@ -266,12 +266,12 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
     shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
-if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    v, _, _ = platform.mac_ver()
+    v = float('.'.join(v.split('.')[:2]))
+    if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
+     url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
@@ -280,12 +280,12 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
     shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
-if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    v, _, _ = platform.mac_ver()
+    v = float('.'.join(v.split('.')[:2]))
+    if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
+     url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "BigSur" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
