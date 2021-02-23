@@ -130,3 +130,5 @@ Scripts/disk.py
 .vscode/settings.json
 backupscript/.DS_Store
 backupscript/scriptbackup.py
+scripts/diskmount.command
+diskmount.command
