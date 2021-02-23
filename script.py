@@ -10,7 +10,6 @@ except ImportError:
     from urllib2 import urlopen
 version=0.5
 version = str(version)
-print("the version of the script is " + version)
 time.sleep(3)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
 xyzpersion = re.findall(r'version=\s*([\d.]+)', page)
@@ -31,8 +30,8 @@ time.sleep(7)
 if os.path.exists('/Volumes/EFI'):
     print ("You mounted your EFI! the script will continue.")
 else: 
-    print ("You didn't mount your EFI, the script will go to sleep....")
-    exit()
+    print ("You didn't mount your EFI, the script will now automatically mount your EFI....")
+    time.sleep(3)
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
