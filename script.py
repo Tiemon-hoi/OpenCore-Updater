@@ -32,6 +32,9 @@ if os.path.exists('/Volumes/EFI'):
 else: 
     print ("You didn't mount your EFI, the script will now automatically mount your EFI....")
     time.sleep(3)
+    uuidnvramthingy = os.system("nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/'")
+    os.system(uuidnvramthingy)
+    print("EFI mounted, continueing...")
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
