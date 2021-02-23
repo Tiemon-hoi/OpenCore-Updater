@@ -38,6 +38,14 @@ else:
         os.system(lastcommand)
     except Exception:
         print("EFI not found, downloading MountEFI....")
+        url = 'https://github.com/corpnewt/MountEFI/archive/update.zip'
+        urllib.request.urlretrieve(url, 'MountEFI.zip')
+        with zipfile.ZipFile('MountEFI.zip', 'r') as zip_ref:
+          zip_ref.extractall()
+        print("the script will now close, after you mounted your EFI you can restart the script....")
+        time.sleep(7)
+        exit()
+
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
