@@ -9,8 +9,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 pathdownload = "downloadtemp"
-os.mkdir(pathdownload)
-os.chdir("downloadtemp")
+    if os.path.exists(pathdownload):
+        os.rmdir(pathdownload)
+    else:
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
 version=0.5
 version = str(version)
 time.sleep(3)
@@ -82,49 +85,49 @@ else:
             exit()
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
+     url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
+        if "RELEASE" not in asset["name"]:
+            continue
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Virtualsmc.zip')
     with zipfile.ZipFile('Virtualsmc.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext", ignore_errors=True)
-    shutil.copytree("Kexts/VirtualSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCBatteryManager.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCDellSensors.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCLightsensor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
+      shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext", ignore_errors=True)
+      shutil.copytree("Kexts/VirtualSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext"):
+        shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext", ignore_errors=True)
+        shutil.copytree("Kexts/SMCBatteryManager.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext"):
+        shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext", ignore_errors=True)
+        shutil.copytree("Kexts/SMCDellSensors.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext"):
+        shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext", ignore_errors=True)
+        shutil.copytree("Kexts/SMCLightsensor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext"):
+        shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext", ignore_errors=True)
+        shutil.copytree("Kexts/SMCProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
+        shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
+        shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
+     url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
+        if "RELEASE" not in asset["name"]:
+            continue
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Lilu.zip')
     with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
+    url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
@@ -133,32 +136,32 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
     shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
+     url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
+        if "RELEASE" not in asset["name"]:
+            continue
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'CPUFriend.zip')
     with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
     shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
- url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
+     url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Polaris22Fixup.zip')
     with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
     shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
+     url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
@@ -167,10 +170,10 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
     shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
+     url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
@@ -179,54 +182,54 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
     shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
- url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
+     url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'SmallTreeIntel82576.zip')
     with zipfile.ZipFile('SmallTreeIntel82576.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
     shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
- url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
+     url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'AtherosE2200Ethernet.zip')
     with zipfile.ZipFile('AtherosE2200Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
     shutil.copytree("AtherosE2200Ethernet-V2.2.2/Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
- url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
+     url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'RealtekRTL8111.zip')
     with zipfile.ZipFile('RealtekRTL8111.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext", ignore_errors=True)
     shutil.copytree("RealtekRTL8111-V2.4.0/Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
     url = 'https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
     urllib.request.urlretrieve(url, 'LucyRTL8125Ethernet.zip')
     with zipfile.ZipFile('LucyRTL8125Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
     shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
     url = 'https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
     urllib.request.urlretrieve(url, 'RealtekRTL8100.zip')
     with zipfile.ZipFile('RealtekRTL8100.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
     shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+    if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
+     url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+    json_data = json.loads(url_data)
+    for asset in json_data["assets"]:
     if "itlwm" not in asset["name"]:
         continue
     url = asset["browser_download_url"]
