@@ -18,7 +18,7 @@ xyzpersion = str(xyzpersion)
 path = os.path.realpath(__file__)
 if version < xyzpersion:
     print("newer version" + xyzpersion + "available... updating ...")
-    time.sleep(3)
+    time.sleep(2)
     with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
      with open(path, "wb+") as f:
         f.write(upd.read())
