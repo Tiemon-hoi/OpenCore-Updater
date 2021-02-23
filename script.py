@@ -6,7 +6,6 @@ print("Make sure you don't have two EFI's mounted at the same time")
 print("The script will now check for newer updates...")
 import urllib.request
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform, subprocess
-version=0.4
 print("the version of the script is" + version)
 
 path = os.path.realpath(__file__)
@@ -749,6 +748,8 @@ print("BYE BYE")
 
 time.sleep(2)
 exit()
+
+version=0.4
 
 
 
