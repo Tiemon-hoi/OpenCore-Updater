@@ -6,11 +6,7 @@ print("Make sure you don't have two EFI's mounted at the same time")
 print("The script will now check for newer updates...")
 import urllib.request
 import time, os, urllib, sys, stat, json, zipfile, shutil, platform, subprocess
-version ="""{
-    "version": "0.5",
-    "author": "Tijmen",
-    "type": "script"
-}"""
+version = 0.5
 
 path = os.path.realpath(__file__)
 
