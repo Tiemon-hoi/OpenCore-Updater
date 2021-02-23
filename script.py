@@ -37,17 +37,15 @@ else:
     time.sleep(3)
     try:
         print("Mounting EFI....")
-        diskmountcommandurl = 'https://github.com/Tiemon-hoi/EFI-Mount-MacOS/blob/main/diskmount.command'
-        urllib.request.urlretrieve(diskmountcommandurl, 'diskmount.command')
-        diskmountcommandpath = 'diskmount.command'
+        diskmountcommandpath = 'scripts/diskmount.command'
         subprocess.call(["chmod" ,"+x", diskmountcommandpath])
         p=subprocess.Popen(['open', '-a', 'Terminal.app', diskmountcommandpath])
-        time.sleep(6)
+        time.sleep(2)
         subprocess.call("kill $(ps aux | grep '[d]iskmount' | awk '{print $2}')", shell=True)
         if os.path.exists("/Volumes/EFI"):
             print("well done! your EFI is mounted, continuing...")
         else: 
-            print("The script couldn't mount your EFI, please do it with MountEFI")
+            print("The script couldn't mount your EFI, falling back to MountEFI....")
             time.sleep(3)
             exit()
     except Exception:
