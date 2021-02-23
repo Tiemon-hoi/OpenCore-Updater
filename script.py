@@ -10,14 +10,14 @@ except ImportError:
     from urllib2 import urlopen
 version=0.5
 version = str(version)
-print("the version of the script is" + version)
+print("the version of the script is " + version)
 time.sleep(3)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
 xyzpersion = re.findall(r'version=\s*([\d.]+)', page)
 xyzpersion = str(xyzpersion[0])
 path = os.path.realpath(__file__)
 if version < xyzpersion:
-    print("newer version" + xyzpersion + "available... updating ...")
+    print("newer version " + xyzpersion + " available... updating ...")
     time.sleep(2)
     with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
      with open(path, "wb+") as f:
@@ -26,7 +26,7 @@ if version < xyzpersion:
     subprocess.call(["chmod" ,"+x", __file__])
     os.execv(__file__, sys.argv)
 else: 
-    print("the script has the newest version" + xyzpersion)
+    print("the script has the newest version " + xyzpersion)
 time.sleep(7) 
 if os.path.exists('/Volumes/EFI'):
     print ("You mounted your EFI! the script will continue.")
