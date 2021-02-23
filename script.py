@@ -41,14 +41,14 @@ else:
         subprocess.call(["chmod" ,"+x", diskmountcommandpath])
         p=subprocess.Popen(['open', '-a', 'Terminal.app', diskmountcommandpath])
         time.sleep(2)
-        subprocess.call("kill $(ps aux | grep '[d]iskmount' | awk '{print $2}')", shell=True)
+        subprocess.call("kill $(ps aux | grep 'diskmount' | awk '{print $2}')", shell=True)
         if os.path.exists("/Volumes/EFI"):
             print("well done! your EFI is mounted, continuing...")
         else: 
             print("The script couldn't mount your EFI, falling back to MountEFI....")
             time.sleep(3)
-            url = 'https://github.com/corpnewt/MountEFI/archive/update.zip'
-            urllib.request.urlretrieve(url, 'MountEFI.zip')
+            url2 = 'https://github.com/corpnewt/MountEFI/archive/update.zip'
+            urllib.request.urlretrieve(url2, 'MountEFI.zip')
             with zipfile.ZipFile('MountEFI.zip', 'r') as zip_ref:
               zip_ref.extractall()
             print("opening MountEFI, the awesome tool from CorpNewt....")
