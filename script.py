@@ -11,12 +11,14 @@ except ImportError:
 version=0.5
 version = str(version)
 print("the version of the script is" + version)
+time.sleep(3)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
 xyzpersion = re.findall(r'version=\s*([\d.]+)', page)
 xyzpersion = str(xyzpersion)
 path = os.path.realpath(__file__)
 if version < xyzpersion:
     print("newer version" + xyzpersion + "available... updating ...")
+    time.sleep(3)
     with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
      with open(path, "wb+") as f:
         f.write(upd.read())
