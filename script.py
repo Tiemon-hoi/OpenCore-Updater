@@ -8,9 +8,9 @@ try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
-    path = "downloadtemp"
-    os.mkdir(path)
-    os.chdir("downloadtemp")
+pathdownload = "downloadtemp"
+os.mkdir(pathdownload)
+os.chdir("downloadtemp")
 version=0.5
 version = str(version)
 time.sleep(3)
@@ -40,8 +40,7 @@ else:
         diskmountcommandpath = 'scripts/diskmount.command'
         subprocess.call(["chmod" ,"+x", diskmountcommandpath])
         p=subprocess.Popen(['open', '-a', 'Terminal.app', diskmountcommandpath])
-        time.sleep(2)
-        subprocess.call("kill $(ps aux | grep 'diskmount' | awk '{print $2}')", shell=True)
+        time.sleep(7)
         if os.path.exists("/Volumes/EFI"):
             print("well done! your EFI is mounted, continuing...")
         else: 
@@ -799,7 +798,7 @@ for asset in json_data["assets"]:
 print("The script has been completed, if there are any bugs feel free to contact me. (Discord = Tijmen#9962 .)")
 
 print("BYE BYE")
-
+os.rmdir(pathdownload)
 time.sleep(2)
 exit()
 
