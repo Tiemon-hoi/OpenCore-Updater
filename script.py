@@ -16,8 +16,8 @@ page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/Open
 xyzpersion = re.findall(r'version=\s*([\d.]+)', page)
 xyzpersion = str(xyzpersion[0])
 path = os.path.realpath(__file__)
-if version < xyzpersion[0]:
-    print("newer version" + xyzpersion[0] + "available... updating ...")
+if version < xyzpersion:
+    print("newer version" + xyzpersion + "available... updating ...")
     time.sleep(2)
     with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
      with open(path, "wb+") as f:
@@ -26,7 +26,7 @@ if version < xyzpersion[0]:
     subprocess.call(["chmod" ,"+x", __file__])
     os.execv(__file__, sys.argv)
 else: 
-    print("the script has the newest version" + xyzpersion[0])
+    print("the script has the newest version" + xyzpersion)
 time.sleep(7) 
 if os.path.exists('/Volumes/EFI'):
     print ("You mounted your EFI! the script will continue.")
