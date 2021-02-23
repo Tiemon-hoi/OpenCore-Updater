@@ -54,7 +54,6 @@ else:
             print("Mount your EFI and come back.....")
             time.sleep(3)
             exit()
-
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
