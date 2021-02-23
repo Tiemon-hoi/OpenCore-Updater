@@ -46,8 +46,16 @@ else:
         a = 'MountEFI-update/MountEFI.command'
         subprocess.call(["chmod" ,"+x", a])
         subprocess.call(['open', '-W', '-a', 'Terminal.app', a])
-        time.sleep(7)
-        exit()
+        c = 'subprocess.call(['open', '-W', '-a', 'Terminal.app', a])'
+        time.sleep(8)
+        a.kill()
+        c.kill()
+        if os.path.exists("/Volumes/EFI"):
+            print("well done! your EFI is mounted, continuing...")
+        else: 
+            print("Mount your EFI and come back.....")
+            time.sleep(3)
+            exit()
 
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
