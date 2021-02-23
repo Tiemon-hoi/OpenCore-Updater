@@ -9,9 +9,11 @@ try:
 except ImportError:
     from urllib2 import urlopen
 version=0.5
+version = str(version)
 print("the version of the script is" + version)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
 xyzpersion = re.findall(r'version=\s*([\d.]+)', page)
+xyzpersion = str(xyzpersion)
 path = os.path.realpath(__file__)
 if version < xyzpersion:
     print("newer version" + xyzpersion + "available... updating ...")
