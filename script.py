@@ -1,27 +1,32 @@
 #!/usr/bin/python3
 print("Hello! Welcome to my OC Updater script!If there is a bug dm me on Discord (Tijmen#9962), or make an issue on GitHub.")
 print("To use this script you need to do the following prerequiresites:")
-print("Mount your EFI (using the MountEFI script from CorpNewt)")
 print("Make sure you don't have two EFI's mounted at the same time") 
 print("The script will now check for newer updates...")
 import urllib.request
-import time, os, urllib, sys, stat, json, zipfile, shutil, platform, subprocess
-version 0.5
-print("the version of the script is" + version)
-
-path = os.path.realpath(__file__)
-
-with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
-    with open(path, "wb+") as f:
-        f.write(upd.read())
-    import subprocess
-    subprocess.call(["chmod" ,"+x", __file__])
-    os.execv(__file__, sys.argv)
+import time, os, urllib, sys, stat, json, zipfile, shutil, platform, subprocess, re
 import urllib.request
 try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
+version 0.5
+print("the version of the script is" + version)
+page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
+xyzpersion = re.findall(r'version\s*([\d.]+)', page)
+path = os.path.realpath(__file__)
+if version < xyzpersion:
+    print("newer version" + xyzpersion "available... updating ...")
+ with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
+    with open(path, "wb+") as f:
+        f.write(upd.read())
+    import subprocess
+    subprocess.call(["chmod" ,"+x", __file__])
+    os.execv(__file__, sys.argv)
+else: 
+    print("the script has the newest version" + xyzpersion)
+    continue
+
 time.sleep(7) 
 if os.path.exists('/Volumes/EFI'):
     print ("You mounted your EFI! the script will continue.")
