@@ -717,78 +717,78 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
   shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
-    with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
+  with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
-    shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
+  shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrightnessKeys/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrightnessKeys.zip')
-    with zipfile.ZipFile('BrightnessKeys.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrightnessKeys/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'BrightnessKeys.zip')
+  with zipfile.ZipFile('BrightnessKeys.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
-    shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
+  shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'OpenCore.zip')
-    with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenCore.zip')
+  with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
-    shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
+  os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
+  shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'OpenCore.zip')
-    with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenCore.zip')
+  with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
-    shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
+  os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
+  shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'OpenCore.zip')
-    with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenCore.zip')
+  with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
-    shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
+  os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
+  shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'OpenRuntime.zip')
-    os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
-    shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenRuntime.zip')
+  os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
+  shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
 
 
-print("The script has been completed, if there are any bugs feel free to contact me. (Discord = Tijmen#9962 .)")
+print("The script has completed, if there are any bugs feel free to contact me. (Discord = Tijmen#9962 .)")
 
 print("BYE BYE")
 
