@@ -42,10 +42,11 @@ else:
     time.sleep(3)
     try:
         print("Mounting EFI....")
-        diskmountcommandpath = 'scripts/diskmount.command'
-        subprocess.call(["chmod" ,"+x", diskmountcommandpath])
-        p=subprocess.Popen(['open', '-a', 'Terminal.app', diskmountcommandpath])
-        time.sleep(10)
+        shell_commando_iscool = "sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')"
+        uuidnvramthingy = os.popen(shell_commando_iscool)
+        uuidnvramthingy = uuidnvramthingy.read()
+        print(uuidnvramthingy)
+        os.popen(uuidnvramthingy)
         if os.path.exists("/Volumes/EFI"):
             print("well done! your EFI is mounted, continuing...")
         else: 
