@@ -195,67 +195,65 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
   shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
- url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AtherosE2200Ethernet.zip')
-    with zipfile.ZipFile('AtherosE2200Ethernet.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'AtherosE2200Ethernet.zip')
+  with zipfile.ZipFile('AtherosE2200Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
-    shutil.copytree("AtherosE2200Ethernet-V2.2.2/Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
+  shutil.copytree("AtherosE2200Ethernet-V2.2.2/Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
- url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'RealtekRTL8111.zip')
-    with zipfile.ZipFile('RealtekRTL8111.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/Mieze/RTL8111_driver_for_OS_X/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'RealtekRTL8111.zip')
+  with zipfile.ZipFile('RealtekRTL8111.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext", ignore_errors=True)
-    shutil.copytree("RealtekRTL8111-V2.4.0/Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext", ignore_errors=True)
+  shutil.copytree("RealtekRTL8111-V2.4.0/Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
-    url = 'https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
-    urllib.request.urlretrieve(url, 'LucyRTL8125Ethernet.zip')
-    with zipfile.ZipFile('LucyRTL8125Ethernet.zip', 'r') as zip_ref:
+  url = 'https://www.insanelymac.com/forum/files/file/1004-lucyrtl8125ethernet/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
+  urllib.request.urlretrieve(url, 'LucyRTL8125Ethernet.zip')
+  with zipfile.ZipFile('LucyRTL8125Ethernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
-    shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
+  shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
-    url = 'https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
-    urllib.request.urlretrieve(url, 'RealtekRTL8100.zip')
-    with zipfile.ZipFile('RealtekRTL8100.zip', 'r') as zip_ref:
+  url = 'https://www.insanelymac.com/forum/files/file/259-realtekrtl8100-binary/?do=download&csrfKey=9da7156f1e6ce2d23fee67731e9fc70b'
+  urllib.request.urlretrieve(url, 'RealtekRTL8100.zip')
+  with zipfile.ZipFile('RealtekRTL8100.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
-    shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
+  shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "itlwm" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'itlwm.zip')
-    with zipfile.ZipFile('itlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "itlwm" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'itlwm.zip')
+  with zipfile.ZipFile('itlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext", ignore_errors=True)
-    shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext", ignore_errors=True)
+  shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
 v, _, _ = platform.mac_ver()
 v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "BigSur" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "BigSur" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+  with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
-    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+  shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
@@ -268,64 +266,54 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
     shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "BigSur" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "BigSur" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+  with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
-    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+  shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "BigSur" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "BigSur" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+  with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
-    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+  shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "Catalina" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "Catalina" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+  with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
-    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+  shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "Mojave" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "Mojave" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+  with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
-    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
-v, _, _ = platform.mac_ver()
-v = float('.'.join(v.split('.')[:2]))
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+  shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13)):
  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
 json_data = json.loads(url_data)
