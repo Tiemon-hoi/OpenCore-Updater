@@ -315,73 +315,73 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13)):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "HighSierra" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportItlwm.zip')
-    with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "HighSierra" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportItlwm.zip')
+  with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
-    shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
+  shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
- url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'IntelBluetoothFirmware.zip')
-    with zipfile.ZipFile('IntelBluetoothFirmware.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'IntelBluetoothFirmware.zip')
+  with zipfile.ZipFile('IntelBluetoothFirmware.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext", ignore_errors=True)
-    shutil.copytree("IntelBluetoothFirmware.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext", ignore_errors=True)
+  shutil.copytree("IntelBluetoothFirmware.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext", ignore_errors=True)
-    shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext", ignore_errors=True)
+  shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AirportBrcmFixup.zip')
-    with zipfile.ZipFile('AirportBrcmFixup.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AirportBrcmFixup.zip')
+  with zipfile.ZipFile('AirportBrcmFixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext", ignore_errors=True)
-    shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext", ignore_errors=True)
+  shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrcmBluetoothInjector.zip')
-    with zipfile.ZipFile('BrcmBluetoothInjector.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'BrcmBluetoothInjector.zip')
+  with zipfile.ZipFile('BrcmBluetoothInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
-    shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
+  shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorlegacy.zip')
-    with zipfile.ZipFile('BrcmBluetoothInjectorLegacy.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorlegacy.zip')
+  with zipfile.ZipFile('BrcmBluetoothInjectorLegacy.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext", ignore_errors=True)
-    shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext", ignore_errors=True)
+  shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
     with zipfile.ZipFile('BrcmFirmwareData.zip', 'r') as zip_ref:
       zip_ref.extractall()
