@@ -537,115 +537,115 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
   shutil.copytree("AHCIPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
-    url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip?raw=true'
-    urllib.request.urlretrieve(url, 'ATAPortInjector.zip')
-    with zipfile.ZipFile('ATAPortInjector.zip', 'r') as zip_ref:
+  url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip?raw=true'
+  urllib.request.urlretrieve(url, 'ATAPortInjector.zip')
+  with zipfile.ZipFile('ATAPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
-    shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
+  shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
-    with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
+  with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
-    shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
+  shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/Voodooinput/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooInput.zip')
-    with zipfile.ZipFile('VoodooInput.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/Voodooinput/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'VoodooInput.zip')
+  with zipfile.ZipFile('VoodooInput.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext", ignore_errors=True)
-    shutil.copytree("VoodooInput.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext", ignore_errors=True)
+  shutil.copytree("VoodooInput.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooRMI.zip')
-    with zipfile.ZipFile('VoodooRMI.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'VoodooRMI.zip')
+  with zipfile.ZipFile('VoodooRMI.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
-    shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
+  shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
-    url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
-    urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
-    with zipfile.ZipFile('AlpsT4USB.zip', 'r') as zip_ref:
+  url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
+  urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
+  with zipfile.ZipFile('AlpsT4USB.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
-    shutil.copytree("Release/AlpsT4USB.kext", "/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
+  shutil.copytree("Release/AlpsT4USB.kext", "/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooSMBus.zip')
-    with zipfile.ZipFile('VoodooSMBus.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooSMBus.zip')
+  with zipfile.ZipFile('VoodooSMBus.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
-    shutil.copytree("VoodooSMBus-v2.2/kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
+  shutil.copytree("VoodooSMBus-v2.2/kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2C.zip')
-    with zipfile.ZipFile('VoodooI2C.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooI2C.zip')
+  with zipfile.ZipFile('VoodooI2C.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext", ignore_errors=True)
-    shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext", ignore_errors=True)
+  shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2CAtmelMXT.zip')
-    with zipfile.ZipFile('VoodooI2CAtmelMXT.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooI2CAtmelMXT.zip')
+  with zipfile.ZipFile('VoodooI2CAtmelMXT.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext", ignore_errors=True)
-    shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext", ignore_errors=True)
+  shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
-    with zipfile.ZipFile('VoodooI2CELAN.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
+  with zipfile.ZipFile('VoodooI2CELAN.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext", ignore_errors=True)
-    shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext", ignore_errors=True)
+  shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2CFTE.zip')
-    with zipfile.ZipFile('VoodooI2CFTE.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooI2CFTE.zip')
+  with zipfile.ZipFile('VoodooI2CFTE.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext", ignore_errors=True)
-    shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext", ignore_errors=True)
+  shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2CHID.zip')
-    with zipfile.ZipFile('VoodooI2CHID.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooI2CHID.zip')
+  with zipfile.ZipFile('VoodooI2CHID.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
-    shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
+  shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
 json_data = json.loads(url_data)
