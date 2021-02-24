@@ -463,79 +463,79 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext", ignore_errors=True)
   shutil.copytree("VoodooHDA.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'CpuTscSync.zip')
-    with zipfile.ZipFile('CpuTscSync.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'CpuTscSync.zip')
+  with zipfile.ZipFile('CpuTscSync.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext", ignore_errors=True)
-    shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext", ignore_errors=True)
+  shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'NVMeFix.zip')
-    with zipfile.ZipFile('NVMeFix.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'NVMeFix.zip')
+  with zipfile.ZipFile('NVMeFix.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
-    shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
+  shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/HibernationFixup/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'HibernationFixup.zip')
-    with zipfile.ZipFile('HibernationFixup.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/HibernationFixup/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'HibernationFixup.zip')
+  with zipfile.ZipFile('HibernationFixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext", ignore_errors=True)
-    shutil.copytree("HibernationFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext", ignore_errors=True)
+  shutil.copytree("HibernationFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
- url_data = urlopen("https://api.github.com/repos/cdf/NightShiftEnabler/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'NightShiftEnabler.zip')
-    with zipfile.ZipFile('NightShiftEnabler.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/cdf/NightShiftEnabler/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'NightShiftEnabler.zip')
+  with zipfile.ZipFile('NightShiftEnabler.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
-    shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
+  shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
- url_data = urlopen("https://api.github.com/repos/cdf/Innie/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'Innie.zip')
-    with zipfile.ZipFile('Innie.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/cdf/Innie/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'Innie.zip')
+  with zipfile.ZipFile('Innie.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Innie.kext", ignore_errors=True)
-    shutil.copytree("Innie.kext", "/Volumes/EFI/EFI/OC/Kexts/Innie.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Innie.kext", ignore_errors=True)
+  shutil.copytree("Innie.kext", "/Volumes/EFI/EFI/OC/Kexts/Innie.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
-    url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
-    urllib.request.urlretrieve(url, 'SATA-unsupported.zip')
-    with zipfile.ZipFile('SATA-unsupported.zip', 'r') as zip_ref:
+  url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
+  urllib.request.urlretrieve(url, 'SATA-unsupported.zip')
+  with zipfile.ZipFile('SATA-unsupported.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext", ignore_errors=True)
-    shutil.copytree("SATA-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext", ignore_errors=True)
+  shutil.copytree("SATA-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
-    url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip?raw=true'
-    urllib.request.urlretrieve(url, 'AHCIPortInjector.zip')
-    with zipfile.ZipFile('AHCIPortInjector.zip', 'r') as zip_ref:
+  url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip?raw=true'
+  urllib.request.urlretrieve(url, 'AHCIPortInjector.zip')
+  with zipfile.ZipFile('AHCIPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
-    shutil.copytree("AHCIPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
+  shutil.copytree("AHCIPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
     url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip?raw=true'
     urllib.request.urlretrieve(url, 'ATAPortInjector.zip')
