@@ -382,47 +382,47 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
       if "RELEASE" not in asset["name"]:
           continue
   url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
-    with zipfile.ZipFile('BrcmFirmwareData.zip', 'r') as zip_ref:
+  urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
+  with zipfile.ZipFile('BrcmFirmwareData.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext", ignore_errors=True)
-    shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext", ignore_errors=True)
+  shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrcmFirmwareRepo.zip')
-    with zipfile.ZipFile('BrcmFirmwareRepo.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'BrcmFirmwareRepo.zip')
+  with zipfile.ZipFile('BrcmFirmwareRepo.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext", ignore_errors=True)
-    shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext", ignore_errors=True)
+  shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrcmNonPatchRAM.zip')
-    with zipfile.ZipFile('BrcmNonPatchRAM.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'BrcmNonPatchRAM.zip')
+  with zipfile.ZipFile('BrcmNonPatchRAM.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext", ignore_errors=True)
-    shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext", ignore_errors=True)
+  shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'BrcmNonPatchRAM2.zip')
-    with zipfile.ZipFile('BrcmNonPatchRAM2.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'BrcmNonPatchRAM2.zip')
+  with zipfile.ZipFile('BrcmNonPatchRAM2.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext", ignore_errors=True)
-    shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext", ignore_errors=True)
+  shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
  url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
 json_data = json.loads(url_data)
