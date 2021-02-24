@@ -786,16 +786,11 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
   urllib.request.urlretrieve(url, 'OpenRuntime.zip')
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
-
-
-print("The script has completed, if there are any bugs feel free to contact me. (Discord = Tijmen#9962 .)")
-
-print("BYE BYE")
 if os.path.exists(pathdownload):
     shutil.rmtree(pathdownload)
-    print(the kexts downloads have been deleted...)
+    print(The kexts downloads have been deleted... have a nice day!)
 else:
-    print(the kexts downloads have been deleted...)
+    print(The kexts downloads have been deleted... have a nice day!)
 time.sleep(2)
 exit()
 
