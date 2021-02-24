@@ -791,7 +791,11 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
 print("The script has completed, if there are any bugs feel free to contact me. (Discord = Tijmen#9962 .)")
 
 print("BYE BYE")
-
+if os.path.exists(pathdownload):
+    shutil.rmtree(pathdownload)
+    print(the kexts downloads have been deleted...)
+else:
+    print(the kexts downloads have been deleted...)
 time.sleep(2)
 exit()
 
