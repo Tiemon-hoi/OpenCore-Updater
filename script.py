@@ -127,11 +127,11 @@ for asset in json_data["assets"]:
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
- hello_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
-json_data = json.loads(hello_data)
-for asset in json_data["assets"]:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
-        continue
+      continue
     urlcpufriend = asset["browser_download_url"]
     urllib.request.urlretrieve(urlcpufriend, 'CPUFriend.zip')
     with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
