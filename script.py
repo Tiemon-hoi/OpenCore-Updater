@@ -788,9 +788,9 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
   shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
 if os.path.exists(pathdownload):
     shutil.rmtree(pathdownload)
-    print(The kexts downloads have been deleted... have a nice day!)
+    print("The kexts downloads have been deleted... have a nice day!")
 else:
-    print(The kexts downloads have been deleted... have a nice day!)
+    print("The kexts downloads have been deleted... have a nice day!")
 time.sleep(2)
 exit()
 
