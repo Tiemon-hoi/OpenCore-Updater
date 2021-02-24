@@ -120,12 +120,12 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'Lilu.zip')
-    with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'Lilu.zip')
+  with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
-    shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
+  shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
   json_data = json.loads(url_data)
@@ -134,68 +134,66 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
           continue
   urlcpufriend = asset["browser_download_url"]
   urllib.request.urlretrieve(urlcpufriend, 'CPUFriend.zip')
-    with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
+  with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
-    shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
+  shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
   json_data = json.loads(url_data)
   for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'WhateverGreen.zip')
-    with zipfile.ZipFile('WhateverGreen.zip', 'r') as zip_ref:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'WhateverGreen.zip')
+  with zipfile.ZipFile('WhateverGreen.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
-    shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")  
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
+  shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")  
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
- url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "Polaris" not in asset["name"]:
-        continue
+  url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Polaris22Fixup.zip')
-    with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
+  with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
-    shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
+  shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'AppleALC.zip')
-    with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/AppleALC/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AppleALC.zip')
+  with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
-    shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
+  shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'IntelMausi.zip')
-    with zipfile.ZipFile('IntelMausi.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/IntelMausi/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'IntelMausi.zip')
+  with zipfile.ZipFile('IntelMausi.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
-    shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
+  shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
- url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'SmallTreeIntel82576.zip')
-    with zipfile.ZipFile('SmallTreeIntel82576.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/khronokernel/SmallTree-I211-AT-patch/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'SmallTreeIntel82576.zip')
+  with zipfile.ZipFile('SmallTreeIntel82576.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
-    shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
+  shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
  url_data = urlopen("https://api.github.com/repos/Mieze/AtherosE2200Ethernet/releases/latest").read()
 json_data = json.loads(url_data)
