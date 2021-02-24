@@ -10,7 +10,9 @@ except ImportError:
     from urllib2 import urlopen
 pathdownload = "downloadtemp"
 if os.path.exists(pathdownload):
-    os.rmdir(pathdownload)
+    shutil.rmtree(pathdownload)
+    os.mkdir(pathdownload)
+    os.chdir("downloadtemp")
 else:
     os.mkdir(pathdownload)
     os.chdir("downloadtemp")
@@ -124,6 +126,18 @@ for asset in json_data["assets"]:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
     shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
+ hello_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
+json_data = json.loads(hello_data)
+for asset in json_data["assets"]:
+    if "RELEASE" not in asset["name"]:
+        continue
+    urlcpufriend = asset["browser_download_url"]
+    urllib.request.urlretrieve(urlcpufriend, 'CPUFriend.zip')
+    with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
+      zip_ref.extractall()
+    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
+    shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
  url_data = urlopen("https://api.github.com/repos/acidanthera/Whatevergreen/releases/latest").read()
 json_data = json.loads(url_data)
@@ -135,23 +149,13 @@ for asset in json_data["assets"]:
     with zipfile.ZipFile('WhateverGreen.zip', 'r') as zip_ref:
       zip_ref.extractall()
     shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
-    shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")
-if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/CPUFriend/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'CPUFriend.zip')
-    with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
-      zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
-    shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
+    shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")  
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
  url_data = urlopen("https://api.github.com/repos/osy/Polaris22Fixup/releases/latest").read()
 json_data = json.loads(url_data)
 for asset in json_data["assets"]:
+    if "Polaris" not in asset["name"]:
+        continue
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Polaris22Fixup.zip')
     with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
