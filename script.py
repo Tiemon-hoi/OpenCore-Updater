@@ -647,75 +647,75 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
- url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'VoodooI2CSynaptics.zip')
-    with zipfile.ZipFile('VoodooI2CSynaptics.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'VoodooI2CSynaptics.zip')
+  with zipfile.ZipFile('VoodooI2CSynaptics.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
-    shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
+  shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
- url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'FakeSMC.zip')
-    with zipfile.ZipFile('FakeSMC.zip', 'r') as zip_ref:
+  url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'FakeSMC.zip')
+  with zipfile.ZipFile('FakeSMC.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext", ignore_errors=True)
-    shutil.copytree("FakeSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext", ignore_errors=True)
+  shutil.copytree("FakeSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext", ignore_errors=True)
-    shutil.copytree("ACPIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext", ignore_errors=True)
+  shutil.copytree("ACPIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext", ignore_errors=True)
-    shutil.copytree("AmdCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext", ignore_errors=True)
+  shutil.copytree("AmdCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/F718x.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/F718x.kext", ignore_errors=True)
-    shutil.copytree("F718x.kext", "/Volumes/EFI/EFI/OC/Kexts/F718x.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/F718x.kext", ignore_errors=True)
+  shutil.copytree("F718x.kext", "/Volumes/EFI/EFI/OC/Kexts/F718x.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext", ignore_errors=True)
-    shutil.copytree("GeforceSensor.kext", "/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext", ignore_errors=True)
+  shutil.copytree("GeforceSensor.kext", "/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext", ignore_errors=True)
-    shutil.copytree("IntelCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext", ignore_errors=True)
+  shutil.copytree("IntelCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext", ignore_errors=True)
-    shutil.copytree("IntelMCHMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext", ignore_errors=True)
+  shutil.copytree("IntelMCHMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext", ignore_errors=True)
-    shutil.copytree("ITEIT87x.kext", "/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext", ignore_errors=True)
+  shutil.copytree("ITEIT87x.kext", "/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext", ignore_errors=True)
-    shutil.copytree("NVClockX.kext", "/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext", ignore_errors=True)
+  shutil.copytree("NVClockX.kext", "/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext", ignore_errors=True)
-    shutil.copytree("RadeonMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext", ignore_errors=True)
+  shutil.copytree("RadeonMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/RadeonMonitor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext", ignore_errors=True)
-    shutil.copytree("SMIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext", ignore_errors=True)
+  shutil.copytree("SMIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMIMonitor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext", ignore_errors=True)
-    shutil.copytree("VoodooBatterySMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext", ignore_errors=True)
+  shutil.copytree("VoodooBatterySMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooBatterySMC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/W836x.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/W836x.kext", ignore_errors=True)
-    shutil.copytree("W836x.kext", "/Volumes/EFI/EFI/OC/Kexts/W836x.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/W836x.kext", ignore_errors=True)
+  shutil.copytree("W836x.kext", "/Volumes/EFI/EFI/OC/Kexts/W836x.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
-    url = 'https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=115905'
-    urllib.request.urlretrieve(url, 'AtherosL1cEthernet.zip')
-    with zipfile.ZipFile('AtherosL1cEthernet.zip', 'r') as zip_ref:
+  url = 'https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=115905'
+  urllib.request.urlretrieve(url, 'AtherosL1cEthernet.zip')
+  with zipfile.ZipFile('AtherosL1cEthernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext", ignore_errors=True)
-    shutil.copytree("AtherosL1cEthernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext", ignore_errors=True)
+  shutil.copytree("AtherosL1cEthernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
-    url = 'https://i.applelife.ru/2018/12/442854_AirPortAtheros40.kext.zip'
-    urllib.request.urlretrieve(url, 'AirPortAtheros40.zip')
-    with zipfile.ZipFile('AirPortAtheros40.zip', 'r') as zip_ref:
+  url = 'https://i.applelife.ru/2018/12/442854_AirPortAtheros40.kext.zip'
+  urllib.request.urlretrieve(url, 'AirPortAtheros40.zip')
+  with zipfile.ZipFile('AirPortAtheros40.zip', 'r') as zip_ref:
       zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
-    shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
+  shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
  url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
 json_data = json.loads(url_data)
