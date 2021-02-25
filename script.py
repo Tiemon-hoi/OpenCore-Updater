@@ -298,6 +298,8 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)):
   url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
   json_data = json.loads(url_data)
+  versionitlwm = json_data["tag_name"]
+  print("updating AirportItlwm to " + versionitlwm +".....")
   for asset in json_data["assets"]:
       if "BigSur" not in asset["name"]:
           continue
@@ -310,6 +312,8 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
   url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
   json_data = json.loads(url_data)
+  versionitlwm = json_data["tag_name"]
+  print("updating AirportItlwm to " + versionitlwm +".....")
   for asset in json_data["assets"]:
       if "BigSur" not in asset["name"]:
           continue
@@ -322,6 +326,8 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15)):
   url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
   json_data = json.loads(url_data)
+  versionitlwm = json_data["tag_name"]
+  print("updating AirportItlwm to " + versionitlwm +".....")
   for asset in json_data["assets"]:
       if "Catalina" not in asset["name"]:
           continue
@@ -334,6 +340,8 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14)):
   url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
   json_data = json.loads(url_data)
+  versionitlwm = json_data["tag_name"]
+  print("updating AirportItlwm to " + versionitlwm +".....")
   for asset in json_data["assets"]:
       if "Mojave" not in asset["name"]:
           continue
@@ -346,6 +354,8 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13)):
   url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/itlwm/releases/latest").read()
   json_data = json.loads(url_data)
+  versionitlwm = json_data["tag_name"]
+  print("updating AirportItlwm to " + versionitlwm +".....")
   for asset in json_data["assets"]:
       if "HighSierra" not in asset["name"]:
           continue
@@ -358,6 +368,8 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
   url_data = urlopen("https://api.github.com/repos/OpenIntelWireless/intelbluetoothfirmware/releases/latest").read()
   json_data = json.loads(url_data)
+  versionintelbluetoothfirmware = json_data["tag_name"]
+  print("updating AirportItlwm to " + versionintelbluetoothfirmware +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'IntelBluetoothFirmware.zip')
@@ -368,9 +380,12 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext", ignore_errors=True)
   shutil.copytree("IntelBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext")
+  print("updated IntelBluetoothInjector to version " + versionintelbluetoothfirmware +"......")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/AirportBrcmFixup/releases/latest").read()
   json_data = json.loads(url_data)
+  versionairportbrcmfixup = json_data["tag_name"]
+  print("updating AirportBrcmFixup to " + versionairportbrcmfixup +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -383,6 +398,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmPatchRAM to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -395,6 +412,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmBluetoothInjectorlegacy to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -407,6 +426,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmFirmwareData to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -419,6 +440,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmFirmwareRepo to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -431,6 +454,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmNonPatchRAM to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -443,6 +468,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmNonPatchRAM2 to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -455,6 +482,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmPatchRAM2 to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -467,6 +496,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrcmPatchRAM/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrcmpatchram = json_data["tag_name"]
+  print("updating BrcmPatchRAM3 to " + versionbrcmpatchram +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -479,12 +510,13 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
   url = 'https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip'
   urllib.request.urlretrieve(url, 'XLNCUSBFix.zip')
+  print("Updating XLNCUSBFix to the newest version.....")
   with zipfile.ZipFile('XLNCUSBFix.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext", ignore_errors=True)
   shutil.copytree("XLNCUSBFix.kext", "/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
-  url = 'https://sourceforge.net/projects/voodoohda/files/latest/download'
+  url = 'https://sourceforge.net/projects/voodoohda/files/VoodooHDA.kext-296.zip/download'
   urllib.request.urlretrieve(url, 'VoodooHDA.zip')
   time.sleep(6)
   with zipfile.ZipFile('VoodooHDA.zip', 'r') as zip_ref:
