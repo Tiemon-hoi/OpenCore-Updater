@@ -790,7 +790,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext", ignore_errors=True)
   shutil.copytree("ITEIT87x.kext", "/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext")
-  Print("Updating other FakeSMC plugins.....")
+  print("Updating other FakeSMC plugins.....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext", ignore_errors=True)
   shutil.copytree("NVClockX.kext", "/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext")
@@ -935,12 +935,15 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
   url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlusLegacy.efi'
   urllib.request.urlretrieve(url, 'HfsPlusLegacy.zip')
-
+  with zipfile.ZipFile('HfsPlusLegacy.zip', 'r') as zip_ref:
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
   shutil.copy2("HfsPlusLegacy.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
   url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus32.efi'
   urllib.request.urlretrieve(url, 'HfsPlus32.zip')
+  with zipfile.ZipFile('HfsPlus32.zip', 'r') as zip_ref:
+      zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
   shutil.copy2("HfsPlus32.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi"):
@@ -953,6 +956,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi"):
           continue
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenPartitionDxe.zip')
+  with zipfile.ZipFile('OpenPartitionDxe.zip', 'r') as zip_ref:
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenPartitionDxe.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi")
 if os.path.exists(pathdownload):
