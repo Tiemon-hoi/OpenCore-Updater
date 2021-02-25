@@ -902,9 +902,11 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
           continue
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenRuntime.zip')
+  with zipfile.ZipFile('OpenRuntime.zip', 'r') as zip_ref:
+      zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
-if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
   json_data = json.loads(url_data)
   versionopencore = json_data["tag_name"]
@@ -914,8 +916,45 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
           continue
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenCanopy.zip')
+  with zipfile.ZipFile('OpenCanopy.zip', 'r') as zip_ref:
+      zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenCanopy.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi")
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi"):
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating OpenUsbKbDxe.efi to " + versionopencore +".....")
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenUsbKbDxe.zip')
+  os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi")
+  shutil.copy2("X64/EFI/OC/Drivers/OpenUsbKbDxe.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi")
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
+  url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlusLegacy.efi'
+  urllib.request.urlretrieve(url, 'HfsPlusLegacy.zip')
+
+  os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
+  shutil.copy2("HfsPlusLegacy.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
+  url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus32.efi'
+  urllib.request.urlretrieve(url, 'HfsPlus32.zip')
+  os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
+  shutil.copy2("HfsPlus32.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi"):
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating OpenPartitionDxe.efi to " + versionopencore +".....")
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenPartitionDxe.zip')
+  os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi")
+  shutil.copy2("X64/EFI/OC/Drivers/OpenPartitionDxe.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi")
 if os.path.exists(pathdownload):
     shutil.rmtree(pathdownload)
     print("The kexts downloads have been deleted... have a nice day!")
