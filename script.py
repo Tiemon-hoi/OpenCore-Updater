@@ -526,6 +526,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/CpuTscSync/releases/latest").read()
   json_data = json.loads(url_data)
+  versioncputscsync = json_data["tag_name"]
+  print("updating CpuTscSync to " + versioncputscsync +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -538,6 +540,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/NVMeFix/releases/latest").read()
   json_data = json.loads(url_data)
+  versionnvmefix = json_data["tag_name"]
+  print("updating NVMeFix to " + versionnvmefix +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -550,6 +554,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/HibernationFixup/releases/latest").read()
   json_data = json.loads(url_data)
+  versiohibernation = json_data["tag_name"]
+  print("updating HibernationFixup to " + versiohibernation +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -562,6 +568,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
   url_data = urlopen("https://api.github.com/repos/cdf/NightShiftEnabler/releases/latest").read()
   json_data = json.loads(url_data)
+  versionnightshift = json_data["tag_name"]
+  print("updating NVMeFix to " + versionnightshift +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -574,6 +582,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
   url_data = urlopen("https://api.github.com/repos/cdf/Innie/releases/latest").read()
   json_data = json.loads(url_data)
+  versioninnie = json_data["tag_name"]
+  print("updating Innie to " + versioninnie +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -586,6 +596,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
   url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/SATA-unsupported.kext.zip?raw=true'
   urllib.request.urlretrieve(url, 'SATA-unsupported.zip')
+  print("Updating SATA-Unsupported.......")
   with zipfile.ZipFile('SATA-unsupported.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext", ignore_errors=True)
@@ -593,6 +604,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
   url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/AHCIPortInjector.kext.zip?raw=true'
   urllib.request.urlretrieve(url, 'AHCIPortInjector.zip')
+  print("Updating AHCIPortInjector.....")
   with zipfile.ZipFile('AHCIPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
@@ -600,6 +612,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
   url = 'https://github.com/khronokernel/Legacy-Kexts/blob/master/Injectors/Zip/ATAPortInjector.kext.zip?raw=true'
   urllib.request.urlretrieve(url, 'ATAPortInjector.zip')
+  print("Updating ATAPortInjector to newest version....")
   with zipfile.ZipFile('ATAPortInjector.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
@@ -607,6 +620,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodoops2 = json_data["tag_name"]
+  print("updating VoodooPS2Controller to " + versionvoodoops2 +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -619,6 +634,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/Voodooinput/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooinput = json_data["tag_name"]
+  print("updating VoodooInput to " + versionvoodooinput +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -631,6 +648,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooRMI/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodoormi = json_data["tag_name"]
+  print("updating VoodooRMI to " + versionvoodoormi +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -643,6 +662,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
   url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
   urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
+  print("Updating AlpsT4USB to the newest version....")
   with zipfile.ZipFile('AlpsT4USB.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
@@ -650,6 +670,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooSmbus/VoodooSMBus/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodoosmbus = json_data["tag_name"]
+  print("updating VoodooSMBus to " + versionvoodoosmbus +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooSMBus.zip')
@@ -660,6 +682,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooi2c = json_data["tag_name"]
+  print("updating VoodooI2C to " + versionvoodooi2c +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2C.zip')
@@ -670,6 +694,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooinput = json_data["tag_name"]
+  print("updating VoodooI2CAtmelMXT to " + versionvoodooinput +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CAtmelMXT.zip')
@@ -680,6 +706,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooinput = json_data["tag_name"]
+  print("updating VoodooI2CELAN to " + versionvoodooinput +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
@@ -690,6 +718,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooinput = json_data["tag_name"]
+  print("updating VoodooI2CFTE to " + versionvoodooinput +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CFTE.zip')
@@ -700,6 +730,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooinput = json_data["tag_name"]
+  print("updating VoodooI2CHID to " + versionvoodooinput +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CHID.zip')
@@ -710,6 +742,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
   url_data = urlopen("https://api.github.com/repos/VoodooI2C/VoodooI2C/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodooinput = json_data["tag_name"]
+  print("updating VoodooI2CSynaptics to " + versionvoodooinput +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CSynaptics.zip')
@@ -720,6 +754,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
   url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
   json_data = json.loads(url_data)
+  versionfakesmc = json_data["tag_name"]
+  print("updating FakeSMC to release " + versionfakesmc +".....")
   for asset in json_data["assets"]:
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'FakeSMC.zip')
@@ -730,24 +766,31 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext", ignore_errors=True)
   shutil.copytree("ACPIMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext")
+  print("Updating FakeSMC Plugin ACPIMonitor....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext", ignore_errors=True)
   shutil.copytree("AmdCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/AmdCPUMonitor.kext")
+  print("Updating FakeSMC Plugin AMDCPUMonitor....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/F718x.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/F718x.kext", ignore_errors=True)
   shutil.copytree("F718x.kext", "/Volumes/EFI/EFI/OC/Kexts/F718x.kext")
+  print("Updating FakeSMC Plugin F718x .....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext", ignore_errors=True)
   shutil.copytree("GeforceSensor.kext", "/Volumes/EFI/EFI/OC/Kexts/GeforceSensor.kext")
+  print("Updating FakeSMC Plugin GeforceSensor....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext", ignore_errors=True)
   shutil.copytree("IntelCPUMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelCPUMonitor.kext")
+  print("Updating FakeSMC Plugin IntelCPUMonitor.....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext", ignore_errors=True)
   shutil.copytree("IntelMCHMonitor.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMCHMonitor.kext")
+  print("Updating FakeSMC Plugin IntelMCHMonitor.....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext", ignore_errors=True)
   shutil.copytree("ITEIT87x.kext", "/Volumes/EFI/EFI/OC/Kexts/ITEIT87x.kext")
+  Print("Updating other FakeSMC plugins.....")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext"):
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext", ignore_errors=True)
   shutil.copytree("NVClockX.kext", "/Volumes/EFI/EFI/OC/Kexts/NVClockX.kext")
@@ -766,6 +809,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/W836x.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
   url = 'https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=115905'
   urllib.request.urlretrieve(url, 'AtherosL1cEthernet.zip')
+  print("Updating AtherosL1cEthernet.....")
   with zipfile.ZipFile('AtherosL1cEthernet.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext", ignore_errors=True)
@@ -773,6 +817,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
   url = 'https://i.applelife.ru/2018/12/442854_AirPortAtheros40.kext.zip'
   urllib.request.urlretrieve(url, 'AirPortAtheros40.zip')
+  print("Updating AirPortAtheros40......")
   with zipfile.ZipFile('AirPortAtheros40.zip', 'r') as zip_ref:
       zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
@@ -780,6 +825,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/VoodooPS2/releases/latest").read()
   json_data = json.loads(url_data)
+  versionvoodoops2 = json_data["tag_name"]
+  print("updating VoodooPS2Controller to " + versionvoodoops2 +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -792,6 +839,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/BrightnessKeys/releases/latest").read()
   json_data = json.loads(url_data)
+  versionbrightnesskeys = json_data["tag_name"]
+  print("updating BrightnessKeys to " + versionbrightnesskeys +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -804,6 +853,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
   json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating OpenCore.efi to " + versionopencore +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -816,6 +867,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
   json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating BOOTx64.efi to " + versionopencore +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -828,6 +881,8 @@ if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
   json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating BOOTIA32.efi to " + versionopencore +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -840,6 +895,8 @@ if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
   json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating OpenRuntime.efi to " + versionopencore +".....")
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
@@ -847,6 +904,18 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
   urllib.request.urlretrieve(url, 'OpenRuntime.zip')
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
+  url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+  json_data = json.loads(url_data)
+  versionopencore = json_data["tag_name"]
+  print("updating OpenCanopy.efi to " + versionopencore +".....")
+  for asset in json_data["assets"]:
+      if "RELEASE" not in asset["name"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'OpenCanopy.zip')
+  os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi")
+  shutil.copy2("X64/EFI/OC/Drivers/OpenCanopy.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi")
 if os.path.exists(pathdownload):
     shutil.rmtree(pathdownload)
     print("The kexts downloads have been deleted... have a nice day!")
