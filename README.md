@@ -18,9 +18,9 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 # We are going over the following topics:
 
 - [Download/Installation](#installation)
-- [What can the script update](#Supported Files)
+- [Supported-Files](#Supported Files)
 - [Usage](#Usage)
-- [What do i want to inprove](#improvements)
+- [What do i want to improve ](#improvements)
     
 
 ***
