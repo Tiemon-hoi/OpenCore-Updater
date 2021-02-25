@@ -939,7 +939,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
   urllib.request.urlretrieve(url, 'HfsPlusLegacy.efi')
   os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
   shutil.copy2("HfsPlusLegacy.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
-if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
+if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi"):
   url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus32.efi'
   urllib.request.urlretrieve(url, 'HfsPlus32.efi')
   os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
