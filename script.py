@@ -930,6 +930,8 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi"):
           continue
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenUsbKbDxe.zip')
+  with zipfile.ZipFile('OpenUsbKbDxe.zip', 'r') as zip_ref:
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenUsbKbDxe.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
