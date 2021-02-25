@@ -89,32 +89,32 @@ else:
 os.chmod("/Volumes/EFI/EFI/OC", stat.S_IRWXO)
 os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
- url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
-json_data = json.loads(url_data)
-for asset in json_data["assets"]:
+  url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
+  json_data = json.loads(url_data)
+  for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
-        continue
-    url = asset["browser_download_url"]
-    urllib.request.urlretrieve(url, 'Virtualsmc.zip')
-    with zipfile.ZipFile('Virtualsmc.zip', 'r') as zip_ref:
-           zip_ref.extractall()
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext", ignore_errors=True)
-    shutil.copytree("Kexts/VirtualSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
+      continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'Virtualsmc.zip')
+  with zipfile.ZipFile('Virtualsmc.zip', 'r') as zip_ref:
+    zip_ref.extractall()
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext", ignore_errors=True)
+  shutil.copytree("Kexts/VirtualSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCBatteryManager.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext", ignore_errors=True)
+  shutil.copytree("Kexts/SMCBatteryManager.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCBatteryManager.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCDellSensors.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext", ignore_errors=True)
+  shutil.copytree("Kexts/SMCDellSensors.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCDellSensors.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCLightsensor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext", ignore_errors=True)
+  shutil.copytree("Kexts/SMCLightsensor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCLightSensor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext", ignore_errors=True)
+  shutil.copytree("Kexts/SMCProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCProcessor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
-    shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
-    shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext", ignore_errors=True)
+  shutil.copytree("Kexts/SMCSuperIO.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
   json_data = json.loads(url_data)
