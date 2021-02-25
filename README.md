@@ -18,7 +18,7 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 # We are going over the following topics:
 
 - [Download/Installation](#installation)
-- [Supported-Files](#Supported Files)
+- [Supported-Files](#Supported-Files)
 - [Usage](#Usage)
 - [What do i want to improve ](#improvements)
     
@@ -43,7 +43,8 @@ Get the latest release from [here](https://github.com/Tiemon-hoi/OpenCore-Update
 
 ***
 
-## Supported Files
+## Supported-Files
+
 ### Kexts
 At the moment the script supports all kexts referred in [kexts.md](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Kexts.md)
 - AMDRyzenCPUPowermanagement is also supported
