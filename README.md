@@ -48,6 +48,7 @@ Get the latest release from [here](https://github.com/Tiemon-hoi/OpenCore-Update
 ### Kexts
 At the moment the script supports all kexts referred in [kexts.md](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Kexts.md)
 - AMDRyzenCPUPowermanagement is also supported
+- SMCAMDProcessor is also supported, but doesn't get updates (AFAIK) 
 ### Drivers
 At the moment the script can update the files mentioned in the [guide](https://dortania.github.io/OpenCore-Install-Guide/ktext.html#must-haves):
 - OpenCore.efi
