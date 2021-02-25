@@ -659,6 +659,20 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
     zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
   shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AMDRyzenCPUPowerManagement.kext"):
+  url_data = urlopen("https://api.github.com/repos/trulyspinach/SMCAMDProcessor/releases/latest").read()
+  json_data = json.loads(url_data)
+  versionAMDRyzenCPUPowerManagement = json_data["tag_name"]
+  print("updating AMDRyzenCPUPowerManagement to " + versionAMDRyzenCPUPowerManagement +".....")
+  for asset in json_data["assets"]:
+      if ".kext" not in asset["browser_download_url"]:
+          continue
+  url = asset["browser_download_url"]
+  urllib.request.urlretrieve(url, 'AMDRyzenCPUPowerManagement.zip')
+  with zipfile.ZipFile('AMDRyzenCPUPowerManagement.zip', 'r') as zip_ref:
+    zip_ref.extractall()
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AMDRyzenCPUPowerManagement.kext", ignore_errors=True)
+  shutil.copytree("AMDRyzenCPUPowerManagement.kext", "/Volumes/EFI/EFI/OC/Kexts/AMDRyzenCPUPowerManagement.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
   url = 'https://github.com/blankmac/AlpsT4USB/files/5933051/AlpsT4USB.zip'
   urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
@@ -751,6 +765,17 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
     zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
+if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCAMDProcessor.kext"):
+  url_data = urlopen("https://github.com/trulyspinach/SMCAMDProcessor/releases/download/0.6.4/SMCAMDProcessor.kext.zip").read()
+  json_data = json.loads(url_data)
+  print("Updating SMCAMDProcessor.......")
+  for asset in json_data["assets"]:
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'SMCAMDProcessor.zip')
+  with zipfile.ZipFile('SMCAMDProcessor.zip', 'r') as zip_ref:
+    zip_ref.extractall()
+  shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCAMDProcessor.kext", ignore_errors=True)
+  shutil.copytree("SMCAMDProcessor.kext", "/Volumes/EFI/EFI/OC/Kexts/SMCAMDProcessor.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
   url_data = urlopen("https://api.github.com/repos/CloverHackyColor/FakeSMC3_with_plugins/releases/latest").read()
   json_data = json.loads(url_data)
