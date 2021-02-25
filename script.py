@@ -128,7 +128,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'Lilu.zip')
   with zipfile.ZipFile('Lilu.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext", ignore_errors=True)
   shutil.copytree("Lilu.kext", "/Volumes/EFI/EFI/OC/Kexts/Lilu.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
@@ -142,7 +142,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext"):
   urlcpufriend = asset["browser_download_url"]
   urllib.request.urlretrieve(urlcpufriend, 'CPUFriend.zip')
   with zipfile.ZipFile('CPUFriend.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext", ignore_errors=True)
   shutil.copytree("CPUFriend.kext", "/Volumes/EFI/EFI/OC/Kexts/CPUFriend.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
@@ -156,7 +156,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'WhateverGreen.zip')
   with zipfile.ZipFile('WhateverGreen.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext", ignore_errors=True)
   shutil.copytree("WhateverGreen.kext", "/Volumes/EFI/EFI/OC/Kexts/WhateverGreen.kext")  
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
@@ -168,7 +168,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext"):
     url = asset["browser_download_url"]
     urllib.request.urlretrieve(url, 'Polaris22Fixup.zip')
   with zipfile.ZipFile('Polaris22Fixup.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext", ignore_errors=True)
   shutil.copytree("Polaris22Fixup.kext", "/Volumes/EFI/EFI/OC/Kexts/Polaris22Fixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
@@ -182,7 +182,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AppleALC.zip')
   with zipfile.ZipFile('AppleALC.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext", ignore_errors=True)
   shutil.copytree("AppleALC.kext", "/Volumes/EFI/EFI/OC/Kexts/AppleALC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
@@ -196,7 +196,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'IntelMausi.zip')
   with zipfile.ZipFile('IntelMausi.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext", ignore_errors=True)
   shutil.copytree("IntelMausi.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelMausi.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
@@ -208,7 +208,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'SmallTreeIntel82576.zip')
   with zipfile.ZipFile('SmallTreeIntel82576.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext", ignore_errors=True)
   shutil.copytree("SmallTreeIntel82576.kext", "/Volumes/EFI/EFI/OC/Kexts/SmallTreeIntel82576.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
@@ -220,7 +220,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'AtherosE2200Ethernet.zip')
   with zipfile.ZipFile('AtherosE2200Ethernet.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext", ignore_errors=True)
   shutil.copytree("AtherosE2200Ethernet-V2.2.2/Release/AtherosE2200Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosE2200Ethernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
@@ -232,7 +232,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'RealtekRTL8111.zip')
   with zipfile.ZipFile('RealtekRTL8111.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext", ignore_errors=True)
   shutil.copytree("RealtekRTL8111-V2.4.0/Release/RealtekRTL8111.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8111.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
@@ -240,7 +240,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext"):
   urllib.request.urlretrieve(url, 'LucyRTL8125Ethernet.zip')
   print("Updating LucyRTL8125Ethernet to the newest version.....")
   with zipfile.ZipFile('LucyRTL8125Ethernet.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext", ignore_errors=True)
   shutil.copytree("Release/LucyRTL8125Ethernet.kext", "/Volumes/EFI/EFI/OC/Kexts/LucyRTL8125Ethernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
@@ -248,7 +248,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext"):
   urllib.request.urlretrieve(url, 'RealtekRTL8100.zip')
   print("Updating RealtekRTL8100 to the newest version.....")
   with zipfile.ZipFile('RealtekRTL8100.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext", ignore_errors=True)
   shutil.copytree("Release/RealtekRTL8100.kext", "/Volumes/EFI/EFI/OC/Kexts/RealtekRTL8100.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
@@ -262,7 +262,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'itlwm.zip')
   with zipfile.ZipFile('itlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/itlwm.kext", ignore_errors=True)
   shutil.copytree("itlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/itlwm.kext")
 v, _, _ = platform.mac_ver()
@@ -278,7 +278,7 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.2)
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportItlwm.zip')
   with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.1)):
@@ -306,7 +306,7 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 11.0)
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportItlwm.zip')
   with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16)):
@@ -320,7 +320,7 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.16
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportItlwm.zip')
   with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15)):
@@ -334,7 +334,7 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.15
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportItlwm.zip')
   with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14)):
@@ -348,7 +348,7 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.14
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportItlwm.zip')
   with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13)):
@@ -362,7 +362,7 @@ if (os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AiportItlwm.kext") and (v == 10.13
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportItlwm.zip')
   with zipfile.ZipFile('AirportItlwm.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext", ignore_errors=True)
   shutil.copytree("AirportItlwm.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportItlwm.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
@@ -374,7 +374,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'IntelBluetoothFirmware.zip')
   with zipfile.ZipFile('IntelBluetoothFirmware.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext", ignore_errors=True)
   shutil.copytree("IntelBluetoothFirmware.kext", "/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothFirmware.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/IntelBluetoothInjector.kext"):
@@ -392,7 +392,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'AirportBrcmFixup.zip')
   with zipfile.ZipFile('AirportBrcmFixup.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext", ignore_errors=True)
   shutil.copytree("AirportBrcmFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/AirportBrcmFixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
@@ -406,7 +406,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmBluetoothInjector.zip')
   with zipfile.ZipFile('BrcmBluetoothInjector.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext", ignore_errors=True)
   shutil.copytree("BrcmBluetoothInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
@@ -420,7 +420,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmBluetoothInjectorlegacy.zip')
   with zipfile.ZipFile('BrcmBluetoothInjectorLegacy.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext", ignore_errors=True)
   shutil.copytree("BrcmBluetoothInjectorLegacy.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmBluetoothInjectorLegacy.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
@@ -434,7 +434,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmFirmwareData.zip')
   with zipfile.ZipFile('BrcmFirmwareData.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext", ignore_errors=True)
   shutil.copytree("BrcmFirmwareData.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareData.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
@@ -448,7 +448,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmFirmwareRepo.zip')
   with zipfile.ZipFile('BrcmFirmwareRepo.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext", ignore_errors=True)
   shutil.copytree("BrcmFirmwareRepo.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmFirmwareRepo.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
@@ -462,7 +462,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmNonPatchRAM.zip')
   with zipfile.ZipFile('BrcmNonPatchRAM.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext", ignore_errors=True)
   shutil.copytree("BrcmNonPatchRAM.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
@@ -476,7 +476,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmNonPatchRAM2.zip')
   with zipfile.ZipFile('BrcmNonPatchRAM2.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext", ignore_errors=True)
   shutil.copytree("BrcmNonPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmNonPatchRAM2.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
@@ -490,7 +490,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmPatchRAM2.zip')
   with zipfile.ZipFile('BrcmPatchRAM2.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext", ignore_errors=True)
   shutil.copytree("BrcmPatchRAM2.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM2.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
@@ -504,7 +504,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrcmPatchRAM3.zip')
   with zipfile.ZipFile('BrcmPatchRAM3.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext", ignore_errors=True)
   shutil.copytree("BrcmPatchRAM3.kext", "/Volumes/EFI/EFI/OC/Kexts/BrcmPatchRAM3.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
@@ -512,7 +512,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext"):
   urllib.request.urlretrieve(url, 'XLNCUSBFix.zip')
   print("Updating XLNCUSBFix to the newest version.....")
   with zipfile.ZipFile('XLNCUSBFix.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext", ignore_errors=True)
   shutil.copytree("XLNCUSBFix.kext", "/Volumes/EFI/EFI/OC/Kexts/XLNCUSBFix.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
@@ -520,7 +520,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext"):
   urllib.request.urlretrieve(url, 'VoodooHDA.zip')
   time.sleep(6)
   with zipfile.ZipFile('VoodooHDA.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext", ignore_errors=True)
   shutil.copytree("VoodooHDA.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooHDA.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
@@ -534,7 +534,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'CpuTscSync.zip')
   with zipfile.ZipFile('CpuTscSync.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext", ignore_errors=True)
   shutil.copytree("CpuTscSync.kext", "/Volumes/EFI/EFI/OC/Kexts/CpuTscSync.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
@@ -548,7 +548,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'NVMeFix.zip')
   with zipfile.ZipFile('NVMeFix.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext", ignore_errors=True)
   shutil.copytree("NVMeFix.kext", "/Volumes/EFI/EFI/OC/Kexts/NVMeFix.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
@@ -562,7 +562,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'HibernationFixup.zip')
   with zipfile.ZipFile('HibernationFixup.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext", ignore_errors=True)
   shutil.copytree("HibernationFixup.kext", "/Volumes/EFI/EFI/OC/Kexts/HibernationFixup.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
@@ -576,7 +576,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'NightShiftEnabler.zip')
   with zipfile.ZipFile('NightShiftEnabler.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext", ignore_errors=True)
   shutil.copytree("NightShiftEnabler.kext", "/Volumes/EFI/EFI/OC/Kexts/NightShiftEnabler.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
@@ -590,7 +590,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Innie.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'Innie.zip')
   with zipfile.ZipFile('Innie.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/Innie.kext", ignore_errors=True)
   shutil.copytree("Innie.kext", "/Volumes/EFI/EFI/OC/Kexts/Innie.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
@@ -598,7 +598,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext"):
   urllib.request.urlretrieve(url, 'SATA-unsupported.zip')
   print("Updating SATA-Unsupported.......")
   with zipfile.ZipFile('SATA-unsupported.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext", ignore_errors=True)
   shutil.copytree("SATA-unsupported.kext", "/Volumes/EFI/EFI/OC/Kexts/SATA-unsupported.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
@@ -606,7 +606,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext"):
   urllib.request.urlretrieve(url, 'AHCIPortInjector.zip')
   print("Updating AHCIPortInjector.....")
   with zipfile.ZipFile('AHCIPortInjector.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext", ignore_errors=True)
   shutil.copytree("AHCIPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/AHCIPortInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
@@ -614,7 +614,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext"):
   urllib.request.urlretrieve(url, 'ATAPortInjector.zip')
   print("Updating ATAPortInjector to newest version....")
   with zipfile.ZipFile('ATAPortInjector.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext", ignore_errors=True)
   shutil.copytree("ATAPortInjector.kext", "/Volumes/EFI/EFI/OC/Kexts/ATAPortInjector.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
@@ -628,7 +628,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
   with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
   shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
@@ -642,7 +642,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'VoodooInput.zip')
   with zipfile.ZipFile('VoodooInput.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext", ignore_errors=True)
   shutil.copytree("VoodooInput.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooInput.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
@@ -656,7 +656,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'VoodooRMI.zip')
   with zipfile.ZipFile('VoodooRMI.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext", ignore_errors=True)
   shutil.copytree("VoodooRMI.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooRMI.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
@@ -664,7 +664,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext"):
   urllib.request.urlretrieve(url, 'AlpsT4USB.zip')
   print("Updating AlpsT4USB to the newest version....")
   with zipfile.ZipFile('AlpsT4USB.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext", ignore_errors=True)
   shutil.copytree("Release/AlpsT4USB.kext", "/Volumes/EFI/EFI/OC/Kexts/AlpsT4USB.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
@@ -676,7 +676,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooSMBus.zip')
   with zipfile.ZipFile('VoodooSMBus.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext", ignore_errors=True)
   shutil.copytree("VoodooSMBus-v2.2/kext/VoodooSMBus.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooSMBus.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
@@ -688,7 +688,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2C.zip')
   with zipfile.ZipFile('VoodooI2C.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext", ignore_errors=True)
   shutil.copytree("VoodooI2C.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2C.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
@@ -700,7 +700,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CAtmelMXT.zip')
   with zipfile.ZipFile('VoodooI2CAtmelMXT.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CAtmelMXT.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CAtmelMXT.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
@@ -712,7 +712,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CELAN.zip')
   with zipfile.ZipFile('VoodooI2CELAN.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CELAN.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CELAN.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
@@ -724,7 +724,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CFTE.zip')
   with zipfile.ZipFile('VoodooI2CFTE.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CFTE.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CFTE.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
@@ -736,7 +736,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CHID.zip')
   with zipfile.ZipFile('VoodooI2CHID.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CHID.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CHID.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
@@ -748,7 +748,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'VoodooI2CSynaptics.zip')
   with zipfile.ZipFile('VoodooI2CSynaptics.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
   shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
@@ -760,7 +760,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext"):
         url = asset["browser_download_url"]
         urllib.request.urlretrieve(url, 'FakeSMC.zip')
   with zipfile.ZipFile('FakeSMC.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext", ignore_errors=True)
   shutil.copytree("FakeSMC.kext", "/Volumes/EFI/EFI/OC/Kexts/FakeSMC.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/ACPIMonitor.kext"):
@@ -811,7 +811,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext"):
   urllib.request.urlretrieve(url, 'AtherosL1cEthernet.zip')
   print("Updating AtherosL1cEthernet.....")
   with zipfile.ZipFile('AtherosL1cEthernet.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext", ignore_errors=True)
   shutil.copytree("AtherosL1cEthernet.kext", "/Volumes/EFI/EFI/OC/Kexts/AtherosL1cEthernet.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
@@ -819,7 +819,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext"):
   urllib.request.urlretrieve(url, 'AirPortAtheros40.zip')
   print("Updating AirPortAtheros40......")
   with zipfile.ZipFile('AirPortAtheros40.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext", ignore_errors=True)
   shutil.copytree("AirPortAtheros40.kext", "/Volumes/EFI/EFI/OC/Kexts/AirPortAtheros40.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
@@ -833,7 +833,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'VoodooPS2Controller.zip')
   with zipfile.ZipFile('VoodooPS2Controller.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext", ignore_errors=True)
   shutil.copytree("VoodooPS2Controller.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooPS2Controller.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
@@ -847,7 +847,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'BrightnessKeys.zip')
   with zipfile.ZipFile('BrightnessKeys.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
   shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
 if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
@@ -861,7 +861,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenCore.zip')
   with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
   shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
@@ -875,7 +875,7 @@ if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTx64.efi"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenCore.zip')
   with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
   shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
 if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
@@ -889,7 +889,7 @@ if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenCore.zip')
   with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
   shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
@@ -903,7 +903,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenRuntime.zip')
   with zipfile.ZipFile('OpenRuntime.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenRuntime.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenRuntime.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi"):
@@ -917,7 +917,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi"):
   url = asset["browser_download_url"]
   urllib.request.urlretrieve(url, 'OpenCanopy.zip')
   with zipfile.ZipFile('OpenCanopy.zip', 'r') as zip_ref:
-      zip_ref.extractall()
+    zip_ref.extractall()
   os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi")
   shutil.copy2("X64/EFI/OC/Drivers/OpenCanopy.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenCanopy.efi")
 if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenUsbKbDxe.efi"):
