@@ -27,6 +27,10 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 
 ## Installation
 
+### Prerequirements
+
+- Python 3, I tested both MacOS standard version, and the [Official](https://www.python.org/downloads/release/) release
+
 ### With Git Clone
 
 Run the following one line at a time in Terminal:
