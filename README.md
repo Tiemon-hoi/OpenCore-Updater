@@ -18,6 +18,7 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 # We are going over the following topics:
 
 - [Download/Installation](#installation)
+- [What can the script update](#Supported Files)
 - [Usage](#Usage)
 - [What do i want to inprove](#improvements)
     
@@ -34,11 +35,31 @@ Run the following one line at a time in Terminal:
     cd OpenCore-Updater
     chmod +x script.py
     
-Run this in the directory: python3 script.py
+Run this in the directory (from terminal): python3 script.py
 
 ### Releases:
 
-Get the latest release from [here](https://github.com/Tiemon-hoi/OpenCore-Updater/releases). then run with python3 script.py (in the directory)
+Get the latest release from [here](https://github.com/Tiemon-hoi/OpenCore-Updater/releases). then run with python3 script.py (in the directory, from terminal)
+
+***
+
+## Supported Files
+### Kexts
+At the moment the script supports all kexts referred in [kexts.md](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Kexts.md)
+- AMDRyzenCPUPowermanagement is also supported
+### Drivers
+At the moment the script can update the files mentioned in the [guide](https://dortania.github.io/OpenCore-Install-Guide/ktext.html#must-haves):
+- OpenCore.efi
+- BOOTx64.efi
+- BOOTIA32.efi
+- OpenRuntime.efi
+- OpenCanopy.efi
+- OpenUsbKbDxe.efi
+- HfsPlusLegacy.efi
+- HfsPlus32.efi
+- OpenPartitionDxe.efi
+### Full list
+Soon there will be a full list of supported files, but first i want the script to be finished.
 
 ***
 
