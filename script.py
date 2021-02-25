@@ -91,6 +91,8 @@ os.chmod("/Volumes/EFI/EFI", stat.S_IRWXO)
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/VirtualSMC.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/VirtualSMC/releases/latest").read()
   json_data = json.loads(url_data)
+  version = json_data["tag_name"]
+  print("updating VirtualSMC to " + version " .....")
   for asset in json_data["assets"]:
     if "RELEASE" not in asset["name"]:
       continue
@@ -118,6 +120,7 @@ if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCSuperIO.kext"):
 if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/Lilu.kext"):
   url_data = urlopen("https://api.github.com/repos/acidanthera/Lilu/releases/latest").read()
   json_data = json.loads(url_data)
+  version = json_data["tag_name"]
   for asset in json_data["assets"]:
       if "RELEASE" not in asset["name"]:
           continue
