@@ -65,7 +65,7 @@ At the moment the script can update the files mentioned in the [guide](https://d
 - HfsPlus32.efi
 - OpenPartitionDxe.efi
 ### Full list
-Soon there will be a full list of supported files, but first i want the script to be finished.
+For a Full list of supported files, refer [here](https://github.com/Tiemon-hoi/OpenCore-Updater/blob/main/fulllist.md)
 
 ***
 
