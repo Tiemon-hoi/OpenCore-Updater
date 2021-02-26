@@ -70,7 +70,6 @@ For a Full list of supported files, refer [here](https://github.com/Tiemon-hoi/O
 ***
 
 ## Usage
-- At the moment this script is only for testing purposes
 - only use it when you know what you are doing
 - if you have anything that you want me to include, feel free to contact me
 - if there are any bugs etc, contact me (Tijmen#9962 on Discord.)
@@ -78,12 +77,7 @@ For a Full list of supported files, refer [here](https://github.com/Tiemon-hoi/O
 ## Improvements
 
 Currently i have alot of things i still want to include, im currently working on *all* of them. A couple of these are:
-- merging the old config.plist with the newer config.plist (this will be excluded for now, since i want the fundamentals first)
-- Automatically grab newest versions, so you don't have to redownload the script
 - Cross Platform (Windows and MacOS)
-- Automatic EFI Mounting
 - Letting people choose what they want to update (eg: only kexts, or only opencore, or even only certain kexts)
-- A compiler, like a .bat or a .command, or even a .app and .exe
-- Both Python 2 and 3 (didnt test both versions)
 
 
