@@ -81,3 +81,4 @@ Currently i have alot of things i still want to include, im currently working on
 - Letting people choose what they want to update (eg: only kexts, or only opencore, or even only certain kexts)
 
 
+
