@@ -83,3 +83,6 @@
 - HfsPlusLegacy.efi
 - HfsPlus32.efi
 - OpenPartitionDxe.efi
+
+### Extra
+If there are any (updated frequently) kexts/efi drivers missing, hit me up on Discord; Tijmen#9962
