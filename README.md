@@ -17,10 +17,9 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 
 # We are going over the following topics:
 
-- [Download/Installation](#installation)
-- [Supported-Files](#Supported-Files)
+- [Download/Installation](#Installation)
+- [Supported Files](#Supported-Files)
 - [Usage](#Usage)
-- [What do i want to improve ](#improvements)
     
 
 ***
@@ -29,7 +28,7 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 
 ### Prerequirements
 
-- Python 3, I tested both MacOS standard version, and the [Official](https://www.python.org/downloads/release/) release
+- Python 3, I tested both MacOS standard version, and the [Official](https://www.python.org/downloads/release/) release.
 
 ### With Git Clone
 
@@ -43,7 +42,11 @@ Run this in the directory (from terminal): python3 script.py
 
 ### Releases:
 
-Get the latest release from [here](https://github.com/Tiemon-hoi/OpenCore-Updater/releases). then run with python3 script.py (in the directory, from terminal)
+Get the latest release from [here](https://github.com/Tiemon-hoi/OpenCore-Updater/releases). then run with python3 script.py, like this:
+
+    cd Downloads/OpenCore-Updater
+    chmod +x script.py
+    python3 script.py
 
 ***
 
@@ -73,12 +76,6 @@ For a Full list of supported files, refer [here](https://github.com/Tiemon-hoi/O
 - only use it when you know what you are doing
 - if you have anything that you want me to include, feel free to contact me
 - if there are any bugs etc, contact me (Tijmen#9962 on Discord.)
-
-## Improvements
-
-Currently i have alot of things i still want to include, im currently working on *all* of them. A couple of these are:
-- Cross Platform (Windows and MacOS)
-- Letting people choose what they want to update (eg: only kexts, or only opencore, or even only certain kexts)
 
 
 
