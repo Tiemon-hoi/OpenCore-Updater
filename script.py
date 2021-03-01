@@ -38,7 +38,8 @@ time.sleep(7)
 
 def efimounting():
     if os.path.exists('/Volumes/EFI'):
-        print ("You mounted your EFI! the script will continue.")
+        print ("You mounted your EFI! Going back to main menu....")
+        time.sleep(3)
         mainMenu()
     else: 
         print ("You didn't mount your EFI, the script will now automatically mount your EFI....")
@@ -51,7 +52,8 @@ def efimounting():
             print(uuidnvramthingy)
             os.popen(uuidnvramthingy)
             if os.path.exists("/Volumes/EFI"):
-                print("well done! your EFI is mounted, continuing...")
+                print("well done! your EFI is mounted.")
+                time.sleep(3)
                 mainMenu()
         except:
             print("The script couldn't  mount your EFI, falling back to mountEFI")
