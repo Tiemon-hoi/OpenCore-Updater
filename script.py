@@ -998,6 +998,11 @@ def everything():
         urllib.request.urlretrieve(url, 'HfsPlus32.efi')
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
         shutil.copy2("HfsPlus32.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
+    if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi"):
+        url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus.efi'
+        urllib.request.urlretrieve(url, 'HfsPlus.efi')
+        os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi")
+        shutil.copy2("HfsPlus.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi"):
         url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
         json_data = json.loads(url_data)
