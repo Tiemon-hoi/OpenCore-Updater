@@ -39,6 +39,7 @@ time.sleep(7)
 def efimounting():
     if os.path.exists('/Volumes/EFI'):
         print ("You mounted your EFI! the script will continue.")
+        mainMenu()
     else: 
         print ("You didn't mount your EFI, the script will now automatically mount your EFI....")
         time.sleep(3)
@@ -51,6 +52,7 @@ def efimounting():
             os.popen(uuidnvramthingy)
             if os.path.exists("/Volumes/EFI"):
                 print("well done! your EFI is mounted, continuing...")
+                mainMenu()
         except:
             print("The script couldn't  mount your EFI, falling back to mountEFI")
             time.sleep(3)
@@ -66,6 +68,7 @@ def efimounting():
             subprocess.call("kill $(ps aux | grep '[M]ountEFI' | awk '{print $2}')", shell=True)
             if os.path.exists("/Volumes/EFI"):
                 print("well done! your EFI is mounted, continuing...")
+                mainMenu()
             else: 
                 print("Mount your EFI and come back.....")
                 time.sleep(3)
