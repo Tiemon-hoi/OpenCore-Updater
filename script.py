@@ -991,16 +991,19 @@ def everything():
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
         url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlusLegacy.efi'
         urllib.request.urlretrieve(url, 'HfsPlusLegacy.efi')
+        print("Updating HfsPlusLegacy.efi to version " + versionopencore)
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
         shutil.copy2("HfsPlusLegacy.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi"):
         url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus32.efi'
         urllib.request.urlretrieve(url, 'HfsPlus32.efi')
+        print("Updating HfsPlus32.efi to version " + versionopencore)
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
         shutil.copy2("HfsPlus32.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi"):
         url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus.efi'
         urllib.request.urlretrieve(url, 'HfsPlus.efi')
+        print("Updating HfsPlus.efi to version " + versionopencore)
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi")
         shutil.copy2("HfsPlus.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi"):
@@ -1140,16 +1143,19 @@ def updatedrivers():
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi"):
         url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlusLegacy.efi'
         urllib.request.urlretrieve(url, 'HfsPlusLegacy.efi')
+        print("Updating HfsPlusLegacy to version " + versionopencore)
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
         shutil.copy2("HfsPlusLegacy.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlusLegacy.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi"):
         url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus32.efi'
         urllib.request.urlretrieve(url, 'HfsPlus32.efi')
+        print("Updating HfsPlus32 to version " + versionopencore)
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
         shutil.copy2("HfsPlus32.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus32.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi"):
         url = 'https://github.com/acidanthera/OcBinaryData/raw/master/Drivers/HfsPlus.efi'
         urllib.request.urlretrieve(url, 'HfsPlus.efi')
+        print("Updating HfsPlus.efi to version " + versionopencore)
         os.remove("/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi")
         shutil.copy2("HfsPlus.efi", "/Volumes/EFI/EFI/OC/Drivers/HfsPlus.efi")
     if os.path.exists("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi"):
