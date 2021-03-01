@@ -1915,12 +1915,9 @@ def kextsupdate():
         shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext", ignore_errors=True)
         shutil.copytree("VoodooI2CSynaptics.kext", "/Volumes/EFI/EFI/OC/Kexts/VoodooI2CSynaptics.kext")
     if os.path.exists("/Volumes/EFI/EFI/OC/Kexts/SMCAMDProcessor.kext"):
-        url_data = urlopen("https://github.com/trulyspinach/SMCAMDProcessor/releases/download/0.6.4/SMCAMDProcessor.kext.zip").read()
-        json_data = json.loads(url_data)
-        print("Updating SMCAMDProcessor.......")
-        for asset in json_data["assets"]:
-            url = asset["browser_download_url"]
-            urllib.request.urlretrieve(url, 'SMCAMDProcessor.zip')
+        url = 'https://github.com/trulyspinach/SMCAMDProcessor/releases/download/0.6.4/SMCAMDProcessor.kext.zip'
+        urllib.request.urlretrieve(url, 'SMCAMDProcessor.zip')
+        print("Updating SMCAMDProcessor to the newest version....")
         with zipfile.ZipFile('SMCAMDProcessor.zip', 'r') as zip_ref:
             zip_ref.extractall()
         shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/SMCAMDProcessor.kext", ignore_errors=True)
