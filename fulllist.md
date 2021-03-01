@@ -82,6 +82,7 @@
 - OpenUsbKbDxe.efi
 - HfsPlusLegacy.efi
 - HfsPlus32.efi
+- HfsPlus.efi
 - OpenPartitionDxe.efi
 
 ### Extra
