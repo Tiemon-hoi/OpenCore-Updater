@@ -1084,6 +1084,20 @@ def updatedrivers():
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
         shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
+    if os.path.exists("/Volumes/EFI/EFI/OC/OpenCore.efi"):
+        url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
+        json_data = json.loads(url_data)
+        versionopencore = json_data["tag_name"]
+        print("updating OpenCore.efi to " + versionopencore +".....")
+        for asset in json_data["assets"]:
+            if "RELEASE" not in asset["name"]:
+                continue
+        url = asset["browser_download_url"]
+        urllib.request.urlretrieve(url, 'OpenCoreefi.zip')
+        with zipfile.ZipFile('OpenCoreefi.zip', 'r') as zip_ref:
+            zip_ref.extractall()
+        os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
+        shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
     if os.path.exists("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi"):
         url_data = urlopen("https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest").read()
         json_data = json.loads(url_data)
