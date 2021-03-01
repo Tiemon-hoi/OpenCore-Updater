@@ -75,6 +75,13 @@ def efimounting():
                 time.sleep(3)
                 mainMenu()
 def everything():
+    if os.path.exists(pathdownload):
+        shutil.rmtree(pathdownload)
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
+    else:
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
     if os.path.exists('/Volumes/EFI'):
         print ("You mounted your EFI! the script will continue.")
     else: 
@@ -906,8 +913,8 @@ def everything():
             if "RELEASE" not in asset["name"]:
                 continue
         url = asset["browser_download_url"]
-        urllib.request.urlretrieve(url, 'OpenCore.zip')
-        with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+        urllib.request.urlretrieve(url, 'OpenCoreefi.zip')
+        with zipfile.ZipFile('OpenCoreefi.zip', 'r') as zip_ref:
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/OC/OpenCore.efi")
         shutil.copy2("X64/EFI/OC/OpenCore.efi", "/Volumes/EFI/EFI/OC/OpenCore.efi")
@@ -920,8 +927,8 @@ def everything():
             if "RELEASE" not in asset["name"]:
                 continue
         url = asset["browser_download_url"]
-        urllib.request.urlretrieve(url, 'OpenCore.zip')
-        with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+        urllib.request.urlretrieve(url, 'OpenCorebootx64.zip')
+        with zipfile.ZipFile('OpenCorebootx64.zip', 'r') as zip_ref:
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
         shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
@@ -934,8 +941,8 @@ def everything():
             if "RELEASE" not in asset["name"]:
                 continue
         url = asset["browser_download_url"]
-        urllib.request.urlretrieve(url, 'OpenCore.zip')
-        with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+        urllib.request.urlretrieve(url, 'OpenCorebootia32.zip')
+        with zipfile.ZipFile('OpenCorebootia32.zip', 'r') as zip_ref:
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
         shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
@@ -1013,6 +1020,13 @@ def everything():
     time.sleep(2)
     mainMenu()
 def updatedrivers():
+    if os.path.exists(pathdownload):
+        shutil.rmtree(pathdownload)
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
+    else:
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
     if os.path.exists('/Volumes/EFI'):
         print ("You mounted your EFI! the script will continue.")
     else: 
@@ -1057,8 +1071,8 @@ def updatedrivers():
             if "RELEASE" not in asset["name"]:
                 continue
         url = asset["browser_download_url"]
-        urllib.request.urlretrieve(url, 'OpenCore.zip')
-        with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+        urllib.request.urlretrieve(url, 'OpenCorebootx64.zip')
+        with zipfile.ZipFile('OpenCorebootx64.zip', 'r') as zip_ref:
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
         shutil.copy2("X64/EFI/BOOT/BOOTx64.efi", "/Volumes/EFI/EFI/BOOT/BOOTx64.efi")
@@ -1071,8 +1085,8 @@ def updatedrivers():
             if "RELEASE" not in asset["name"]:
                 continue
         url = asset["browser_download_url"]
-        urllib.request.urlretrieve(url, 'OpenCore.zip')
-        with zipfile.ZipFile('OpenCore.zip', 'r') as zip_ref:
+        urllib.request.urlretrieve(url, 'OpenCorebootia32.zip')
+        with zipfile.ZipFile('OpenCorebootia32.zip', 'r') as zip_ref:
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
         shutil.copy2("IA32/EFI/BOOT/BOOTIA32.efi", "/Volumes/EFI/EFI/BOOT/BOOTIA32.efi")
@@ -1142,7 +1156,8 @@ def updatedrivers():
             zip_ref.extractall()
         os.remove("/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi")
         shutil.copy2("X64/EFI/OC/Drivers/OpenPartitionDxe.efi", "/Volumes/EFI/EFI/OC/Drivers/OpenPartitionDxe.efi")
-    if os.path.exists(pathdownload):
+    os.chdir("..")
+    if os.path.exists("downloadtemp"):
           shutil.rmtree(pathdownload)
           print("The driver downloads have been deleted... have a nice day!")
     else:
@@ -1150,6 +1165,13 @@ def updatedrivers():
     time.sleep(2)
     mainMenu()
 def kextsupdate():
+    if os.path.exists(pathdownload):
+        shutil.rmtree(pathdownload)
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
+    else:
+        os.mkdir(pathdownload)
+        os.chdir("downloadtemp")
     if os.path.exists('/Volumes/EFI'):
         print ("You mounted your EFI! the script will continue.")
     else: 
@@ -1972,7 +1994,8 @@ def kextsupdate():
             zip_ref.extractall()
         shutil.rmtree("/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext", ignore_errors=True)
         shutil.copytree("BrightnessKeys.kext", "/Volumes/EFI/EFI/OC/Kexts/BrightnessKeys.kext")
-    if os.path.exists(pathdownload):
+    os.chdir("..")
+    if os.path.exists("downloadtemp"):
           shutil.rmtree(pathdownload)
           print("The kext downloads have been deleted... have a nice day!")
     else:
@@ -2001,5 +2024,9 @@ def mainMenu():
         efimounting()
     elif selection == 5:
         print("Quiting....")
+        time.sleep(1)
+        os.chdir("..")
+        if os.path.exists("downloadtemp"):
+            shutil.rmtree(pathdownload)
         quit()
 mainMenu()
