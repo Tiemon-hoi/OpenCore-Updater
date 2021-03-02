@@ -1,7 +1,6 @@
 # OpenCore Updater
 
-Python script which can update kexts, EFI files and OpenCore. there is still alot i have to do, so i don't recommend using this script as of right now.
-
+Python script which can update kexts, EFI files and OpenCore. there is still alot i have to do.
 ***
 
 # What can the updater do, and what do i want to include:
