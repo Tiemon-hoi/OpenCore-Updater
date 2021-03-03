@@ -16,7 +16,7 @@ if os.path.exists(pathdownload):
 else:
     os.mkdir(pathdownload)
     os.chdir("downloadtemp")
-version=0.7
+version=0.8
 version = str(version)
 time.sleep(3)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
