@@ -46,16 +46,12 @@ def efimounting():
         time.sleep(3)
         try:
             print("Mounting EFI....")
-            shell_commando_iscool = "sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')"
-            uuidnvramthingy = os.popen(shell_commando_iscool)
-            uuidnvramthingy = uuidnvramthingy.read()
-            print(uuidnvramthingy)
-            os.popen(uuidnvramthingy)
+            subprocess.call(r"sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')", shell=True)
             if os.path.exists("/Volumes/EFI"):
                 print("well done! your EFI is mounted.")
                 time.sleep(3)
                 mainMenu()
-        except:
+        except Exception:
             print("The script couldn't  mount your EFI, falling back to mountEFI")
             time.sleep(3)
             url2 = 'https://github.com/corpnewt/MountEFI/archive/update.zip'
@@ -89,11 +85,7 @@ def everything():
         time.sleep(3)
         try:
             print("Mounting EFI....")
-            shell_commando_iscool = "sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')"
-            uuidnvramthingy = os.popen(shell_commando_iscool)
-            uuidnvramthingy = uuidnvramthingy.read()
-            print(uuidnvramthingy)
-            os.popen(uuidnvramthingy)
+            subprocess.call(r"sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')", shell=True)
             if os.path.exists("/Volumes/EFI"):
                 print("well done! your EFI is mounted, continuing...")
         except:
@@ -1039,11 +1031,7 @@ def updatedrivers():
         time.sleep(3)
         try:
             print("Mounting EFI....")
-            shell_commando_iscool = "sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')"
-            uuidnvramthingy = os.popen(shell_commando_iscool)
-            uuidnvramthingy = uuidnvramthingy.read()
-            print(uuidnvramthingy)
-            os.popen(uuidnvramthingy)
+            subprocess.call(r"sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')", shell=True)
             if os.path.exists("/Volumes/EFI"):
                 print("well done! your EFI is mounted, continuing...")
         except:
@@ -1206,11 +1194,7 @@ def kextsupdate():
         time.sleep(3)
         try:
             print("Mounting EFI....")
-            shell_commando_iscool = "sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')"
-            uuidnvramthingy = os.popen(shell_commando_iscool)
-            uuidnvramthingy = uuidnvramthingy.read()
-            print(uuidnvramthingy)
-            os.popen(uuidnvramthingy)
+            subprocess.call(r"sudo diskutil mount $(nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:boot-path | sed 's/.*GPT,\([^,]*\),.*/\1/')", shell=True)
             if os.path.exists("/Volumes/EFI"):
                 print("well done! your EFI is mounted, continuing...")
         except:
@@ -2048,7 +2032,6 @@ def mainMenu():
         efimounting()
     elif selection == 5:
         print("Quiting....")
-        time.sleep(1)
         os.chdir("..")
         if os.path.exists("downloadtemp"):
             shutil.rmtree(pathdownload)
