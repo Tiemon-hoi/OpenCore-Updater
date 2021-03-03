@@ -18,7 +18,7 @@ Python script which can update kexts, EFI files and OpenCore. there is still alo
 
 - [Download/Installation](#Installation)
 - [Supported Files](#Supported-Files)
-- [Usage](#Usage)
+- [Disclaimer](#Disclaimer)
     
 
 ***
@@ -71,10 +71,10 @@ For a Full list of supported files, refer [here](https://github.com/Tiemon-hoi/O
 
 ***
 
-## Usage
-- only use it when you know what you are doing
-- if you have anything that you want me to include, feel free to contact me
-- if there are any bugs etc, contact me (Tijmen#9962 on Discord.)
+## Disclaimer
+- Only use it when you know what you are doing
+- If you have anything that you want me to include, feel free to contact me
+- If there are any bugs etc, contact me (Tijmen#9962 on Discord.)
 
 
 
